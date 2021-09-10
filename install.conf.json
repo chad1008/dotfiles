@@ -16,6 +16,14 @@
             "~/.p10k.zsh" : {
                     "force" : true,
                     "path" : "Zsh/p10k.zsh"
+            },
+            "~/Library/Application Support/Code/User/settings.json" : {
+                "force" : true,
+                "path" : "System/VSCode/settings.json"
+            },
+            "~/Library/Application Support/Code/User/snippets" : {
+                "force" : true,
+                "path" : "System/VSCode/snippets"
             }
         }
     }

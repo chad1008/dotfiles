@@ -1,0 +1,21 @@
+{
+  "workbench.colorTheme": "Solarized Dark",
+  "telemetry.enableTelemetry": false,
+  "html.format.preserveNewLines": false,
+  "html.format.endWithNewline": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 14,
+  "workbench.startupEditor": "none",
+  "files.autoSave": "onFocusChange",
+  "prettier.configPath": "",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "explorer.confirmDelete": false,
+  "editor.bracketPairColorization.enabled": true,
+  "explorer.confirmDragAndDrop": false
+}
