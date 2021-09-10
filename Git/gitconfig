@@ -5,3 +5,5 @@
 	defaultBranch = main
 [pull]
 	ff = only
+[core]
+	excludesfile = /Users/chad/.gitignore_global

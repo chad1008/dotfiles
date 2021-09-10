@@ -6,6 +6,9 @@
                 "force" : true,
                 "path" : "Git/gitconfig"
             },
+            "~/.gitignore_global" : {
+                "path" : "Git/gitignore_global"
+            },
             "~/.zshrc" : {
                 "force" : true,
                 "path" : "Zsh/zshrc"
