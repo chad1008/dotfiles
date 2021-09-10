@@ -1,0 +1,15 @@
+[
+    {
+        "clean" : ["~"],
+        "link" : {
+            "~/.gitconfig" : {
+                "force" : true,
+                "path" : "Git/gitconfig"
+            },
+            "~/.zshrc" : {
+                "force" : true,
+                "path" : "Zsh/zshrc"
+            }
+        }
+    }
+]
