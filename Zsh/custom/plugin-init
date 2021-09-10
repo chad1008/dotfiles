@@ -1,0 +1,5 @@
+#autoload
+#Loading substring search: https://github.com/zsh-users/zsh-history-substring-search
+source ~/.dotfiles/Zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down

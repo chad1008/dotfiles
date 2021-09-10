@@ -7,7 +7,7 @@ export ZSH="/Users/chad/.oh-my-zsh"
 
 export dotfiles=$HOME/.dotfiles
 export DOTFILES=$dotfiles
-# export ZSH_CUSTOM=$DOTFILES/Zsh/custom
+export ZSH_CUSTOM=$DOTFILES/Zsh/custom
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -21,7 +21,7 @@ fi
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# ZSH Settings
+# Zsh Settings
 plugins=(git zsh-history-substring-search)
 ZSH_THEME="Agnoster"
 COMPLETION_WAITING_DOTS="true"
@@ -33,7 +33,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#Loading substring search: https://github.com/zsh-users/zsh-history-substring-search
-source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+# Zsh Plugin initizlization
+source $ZSH_CUSTOM/plugin-init
