@@ -3,3 +3,5 @@
 	email = 13856531+chad1008@users.noreply.github.com
 [init]
 	defaultBranch = main
+[pull]
+	ff = only
