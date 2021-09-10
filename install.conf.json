@@ -12,6 +12,10 @@
             "~/.zshrc" : {
                 "force" : true,
                 "path" : "Zsh/zshrc"
+            },
+            "~/.p10k.zsh" : {
+                    "force" : true,
+                    "path" : "Zsh/p10k.zsh"
             }
         }
     }
