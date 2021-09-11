@@ -24,6 +24,10 @@
             "~/Library/Application Support/Code/User/snippets" : {
                 "force" : true,
                 "path" : "System/VSCode/snippets"
+            },
+            "~/Library/Application Support/iTerm2/DynamicProfiles" : {
+                "force" : true,
+                "path" : "System/iTerm2/DynamicProfiles"
             }
         },
         "shell" : [
