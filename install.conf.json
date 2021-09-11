@@ -25,6 +25,18 @@
                 "force" : true,
                 "path" : "System/VSCode/snippets"
             }
-        }
+        },
+        "shell" : [
+            {
+                "command" : "defaults write com.googlecode.iterm2 PrefsCustomFolder -string '~/.dotfiles/System/iTerm2'",
+                "description" : "Specifying iTerm2's preferences directory...",
+                "quiet" : true
+            },
+            {
+                "command" : "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true",
+                "description" : "Activating iTerm2's custom preferences directory...",
+                "quiet" : true
+            }
+        ]
     }
 ]
