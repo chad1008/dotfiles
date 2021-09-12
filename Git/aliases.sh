@@ -9,58 +9,58 @@ alias    g='git'
 
 # Status and info
 # keywords: status log
-alias   gs='g status'
-alias  gss='gs -s'
+alias   gs='git status'
+alias  gss='git status -s'
 
-alias   gl='g log --oneline'
+alias   gl='git log --oneline'
 
 # Staging and committing
 # keywords: stage stash add commit
-alias   ga='g add'
-alias  gau='ga -u'
-alias  gaa='ga -A'
+alias   ga='git add'
+alias  gau='git add -u'
+alias  gaa='git add -A'
 
-alias   gc='g commit'
-alias  gcm='gc -m'
-alias  gcu='gau && gc'
-alias gcum='gau && gcm'
-alias  gca='gaa && gc'
-alias gcam='gaa && gcm'
-alias  gc!='gc --amend'
-alias gc!n='gc! --no-edit'
+alias   gc='git commit'
+alias  gcm='git commit -m'
+alias  gcu='git add -u && git commit'
+alias gcum='git add -u && git commit -m'
+alias  gca='git add -a && git commit'
+alias gcam='git add -a && git commit -m'
+alias  gcA='git commit --amend'
+alias gcAn='git commit --amend --no-edit'
 
-alias  gst='g stash'
-alias gstm='gst -m'
-alias gstl='gst list'
-alias gsta='gst apply'
-alias gstp='gst pop'
+alias  gst='git stash'
+alias gstm='git stash -m'
+alias gstl='git stash list'
+alias gsta='git stash apply'
+alias gstp='git stas pop'
 
 # Branches and remotes
 # keywords: branch remote
-alias  gco='g checkout'
-alias gcob='gco -b'
+alias  gco='git checkout'
+alias gcob='git checkout -b'
 alias  gbd='git branch -d'
 alias  gbD='git branch -D'
 
-alias   gr='g remote'
+alias   gr='git remote'
 
-alias   gm='g merge'
+alias   gm='git merge'
 
 # Push and pull
 # keywords: push pull
-alias gpsh='g push'
-alias gpll='g pull'
-alias   gf='g fetch'
+alias gpsh='git push'
+alias gpll='git pull'
+alias   gf='git fetch'
 
 # Other
 # keywords: bisect rebase cherry-pick other
-alias   gb='g bisect'
-alias  gbs='gb start'
-alias  gbg='gb good'
-alias  gbb='gb bad'
-alias  gbr='gb reset'
+alias   gb='git bisect'
+alias  gbs='git bisect start'
+alias  gbg='git bisect good'
+alias  gbb='git bisect bad'
+alias  gbr='git bisect reset'
 
-alias  grb='g rebase -i'
-alias grba='g rebase abort'
+alias  grb='git rebase -i'
+alias grba='git rebase abort'
 
-alias  gcp='g cherry-pick'
+alias  gcp='git cherry-pick'
