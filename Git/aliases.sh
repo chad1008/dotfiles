@@ -46,6 +46,7 @@ alias   gcom='git checkout $(git_main_branch)'
 alias     gb='git branch'
 alias    gbd='git branch -d'
 alias    gbD='git branch -D'
+alias     gn='nuke_git_branches'
 
 alias     gr='git remote'
 
@@ -54,18 +55,26 @@ alias     gm='git merge'
 # Push and pull
 # keywords: push pull
 alias   gpsh='git push'
+alias  gpshu='git push -u origin'
 alias   gpll='git pull'
 alias     gf='git fetch'
 
-# Other
-# keywords: bisect rebase cherry-pick other
+# Bisect
+# keywords: bisect
 alias    gbs='git bisect'
-alias    gbss='git bisect start'
-alias    gbsg='git bisect good'
-alias    gbsb='git bisect bad'
-alias    gbsr='git bisect reset'
+alias   gbss='git bisect start'
+alias   gbsg='git bisect good'
+alias   gbsb='git bisect bad'
+alias   gbsr='git bisect reset'
 
-alias    grb='git rebase -i'
+# Other
+# keywords: rebase reset cherry-pick other
+alias    grst='git reset'
+alias   grsth='git reset --hard'
+
+alias    grb='git rebase'
+alias   grbi='git rebase -i'
+alias   grbm='git rebase $(git_main_branch)'
 alias   grba='git rebase abort'
 
 alias    gcp='git cherry-pick'
