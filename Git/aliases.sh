@@ -14,12 +14,20 @@ alias    gss='git status -s'
 
 alias     gl='git log --oneline'
 
-# Staging and committing
-# keywords: stage stash add commit
+# Staging and stashing
+# keywords: stage stash add
 alias     ga='git add'
 alias    gau='git add -u'
 alias    gaa='git add -A'
 
+alias    gst='git stash'
+alias   gstm='git stash -m'
+alias   gstl='git stash list'
+alias   gsta='git stash apply'
+alias   gstp='git stas pop'
+
+# Committing
+# keywords: commit amend no-edit
 alias     gc='git commit'
 alias    gcm='git commit -m'
 alias    gcu='git add -u && git commit'
@@ -29,11 +37,6 @@ alias   gcam='git add -a && git commit -m'
 alias    gcA='git commit --amend'
 alias   gcAn='git commit --amend --no-edit'
 
-alias    gst='git stash'
-alias   gstm='git stash -m'
-alias   gstl='git stash list'
-alias   gsta='git stash apply'
-alias   gstp='git stas pop'
 
 # Branches and remotes
 # keywords: branch remote
