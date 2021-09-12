@@ -1,27 +1,69 @@
 #!/bin/bash
 
 # Print a git alias cheatsheet
-
 gitcheat() {
-    if [ $# -eq 0 ]
-    then
-        cat $DOTFILES/Git/aliases.sh
-    elif [ $1 = "status" ]
-    then
-        sed -n '/Status/,/committing/{/committing/!p;}' Git/aliases.sh
-    elif [ $1 = "stage" ] || [ $1 = "commit" ]
-    then
-        sed -n '/Staging/,/Branches/{/Branches/!p;}' Git/aliases.sh
-    elif [ $1 = "branch" ] || [ $1 = "remote" ]
-    then
-        sed -n '/Branches/,/Push/{/Push/!p;}' Git/aliases.sh
-    elif [ $1 = "push" ] || [ $1 = "pull" ]
-    then
-        sed -n '/Push/,/Other/{/Other/!p;}' Git/aliases.sh
-    elif [ $1 = "bisect" ] || [ $1 = "rebase" ] || [ $1 = "cherry-pick" ] || [ $1 = "other" ]
-    then
-        sed -n '/Other/,$p;' Git/aliases.sh
-  else
-        echo 'Invalid search term'
+    declare ALIAS_FILE=$DOTFILES/Git/aliases.sh
+    # Read file sections from alias.sh
+    IFS=$'\n' SECTIONS=($(sed -n -e '/^# /{/^# keywords:/!p;}' $ALIAS_FILE))
+    # Read file section keywords from alias.sh
+    IFS=$'\n' KEYS=($(sed -n -e '/^# keywords:/p' $ALIAS_FILE | sed -e "s/# keywords://"))
+    declare MATCH=false
+
+    # Loop through the sections
+    for ((index=1; index <= ${#SECTIONS[@]}; index++)); do
+        # If the search term matches keywords for the current section...
+        if [[ ${KEYS[index]} == *"$1"* ]];then
+            MATCH=true
+            # If the current section is the last on the page...
+            if [[ $index == ${#SECTIONS[@]} ]]; then
+                # Print to the end of the file
+                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+            else
+                # Print to the next section, excluding its title
+                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+            fi
+        fi
+    done
+
+    # Handle invalid search terms
+    if [[ $MATCH == false ]]; then
+        echo "Keyword \"$1\" was not found. Please try one of the following:"
+        for i in "${KEYS[@]}"; do
+            echo $i
+        done
+    fi
+}
+
+
+test() {
+    declare ALIAS_FILE=$DOTFILES/Git/aliases.sh
+    # Read file sections from alias.sh
+    IFS=$'\n' SECTIONS=($(sed -n -e '/^# /{/^# keywords:/!p;}' $ALIAS_FILE))
+    # Read file section keywords from alias.sh
+    IFS=$'\n' KEYS=($(sed -n -e '/^# keywords:/p' $ALIAS_FILE | sed -e "s/# keywords://"))
+    declare MATCH=false
+
+    # Loop through the sections
+    for ((index=1; index <= ${#SECTIONS[@]}; index++)); do
+        # If the search term matches keywords for the current section...
+        if [[ ${KEYS[index]} == *"$1"* ]];then
+            MATCH=true
+            # If the current section is the last on the page...
+            if [[ $index == ${#SECTIONS[@]} ]]; then
+                # Print to the end of the file
+                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+            else
+                # Print to the next section, excluding its title
+                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+            fi
+        fi
+    done
+
+    # Handle invalid search terms
+    if [[ $MATCH == false ]]; then
+        echo "Keyword \"$1\" was not found. Please try one of the following:"
+        for i in "${KEYS[@]}"; do
+            echo $i
+        done
     fi
 }
