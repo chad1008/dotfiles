@@ -17,10 +17,10 @@ gitcheat() {
             # If the current section is the last on the page...
             if [[ $index == ${#SECTIONS[@]} ]]; then
                 # Print to the end of the file
-                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //' | sed -e "s/'//g" | sed -e "s/=/ = /"
+                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | gitcheat_sed_cleanup
             else
                 # Print to the next section, excluding its title
-                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //' | sed -e "s/'//g" | sed -e "s/=/ = /"
+                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | gitcheat_sed_cleanup
             fi
         fi
     done
@@ -32,4 +32,12 @@ gitcheat() {
             echo $i
         done
     fi
+}
+
+# Clean up gitcheat's sed output
+gitcheat_sed_cleanup() {
+    sed -n '/^# keywords:/!p' |
+    sed -e 's/alias //' |
+    sed -e "s/'//g" |
+    sed -e "s/=/ = /"
 }
