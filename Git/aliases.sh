@@ -24,7 +24,8 @@ alias    gst='git stash'
 alias   gstm='git stash -m'
 alias   gstl='git stash list'
 alias   gsta='git stash apply'
-alias   gstp='git stas pop'
+alias   gstp='git stash pop'
+alias   gstc='git stash clear'
 
 # Committing
 # keywords: commit amend no-edit
