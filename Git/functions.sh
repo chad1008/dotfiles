@@ -17,10 +17,10 @@ gitcheat() {
             # If the current section is the last on the page...
             if [[ $index == ${#SECTIONS[@]} ]]; then
                 # Print to the end of the file
-                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+                sed -n "/${SECTIONS[index]}/,\$p" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //' | sed -e "s/'//g" | sed -e "s/=/ = /"
             else
                 # Print to the next section, excluding its title
-                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //'
+                sed -n "/${SECTIONS[index]}/,/${SECTIONS[index+1]}/{/${SECTIONS[index+1]}/!p;}" $ALIAS_FILE | sed -n '/^# keywords:/!p' | sed -e 's/alias //' | sed -e "s/'//g" | sed -e "s/=/ = /"
             fi
         fi
     done
