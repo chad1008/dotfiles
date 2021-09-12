@@ -38,7 +38,6 @@ alias   gcam='git add -a && git commit -m'
 alias    gcA='git commit --amend'
 alias   gcAn='git commit --amend --no-edit'
 
-
 # Branches and remotes
 # keywords: branch remote merge
 alias    gco='git checkout'
@@ -60,11 +59,11 @@ alias     gf='git fetch'
 
 # Other
 # keywords: bisect rebase cherry-pick other
-alias     gb='git bisect'
-alias    gbs='git bisect start'
-alias    gbg='git bisect good'
-alias    gbb='git bisect bad'
-alias    gbr='git bisect reset'
+alias    gbs='git bisect'
+alias    gbss='git bisect start'
+alias    gbsg='git bisect good'
+alias    gbsb='git bisect bad'
+alias    gbsr='git bisect reset'
 
 alias    grb='git rebase -i'
 alias   grba='git rebase abort'
