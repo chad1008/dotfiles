@@ -41,3 +41,30 @@ gitcheat_sed_cleanup() {
     sed -e "s/'//g" |
     sed -e "s/=/ = /"
 }
+
+# Destroy all branches other than main
+nuke_git_branches() {
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    NC='\033[0m'
+
+    if [[ "$(git branch | grep -vc "$(git_main_branch)")" == 0 ]]; then
+        echo ${GREEN}There are no remote branches to remove.${NC}
+    else
+        echo ${RED}You are about to delete the following local branches:${NC}
+        git branch | grep -v "$(git_main_branch)"
+
+        read "?Are you sure? (y/n) "
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            echo ${GREEN}Processing...${NC}
+            echo
+            git checkout $(git_main_branch)
+            git branch | grep -v "$(git_main_branch)" |
+            xargs git branch -D
+        else
+            echo "Exiting..."
+        fi
+    fi
+}
