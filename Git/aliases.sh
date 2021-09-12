@@ -42,6 +42,7 @@ alias   gcAn='git commit --amend --no-edit'
 # keywords: branch remote
 alias    gco='git checkout'
 alias   gcob='git checkout -b'
+alias   gcom='git checkout $(git_main_branch)'
 alias    gbd='git branch -d'
 alias    gbD='git branch -D'
 
