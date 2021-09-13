@@ -766,7 +766,7 @@
 				<key>Has Toolbelt</key>
 				<false/>
 				<key>Height</key>
-				<real>731</real>
+				<real>754</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Hiding Toolbelt Should Resize Window</key>
@@ -782,7 +782,7 @@
 				<key>Scroller Width</key>
 				<real>15</real>
 				<key>Selected Tab Index</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>Tabs</key>
 				<array>
 					<dict>
@@ -1101,7 +1101,7 @@
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>E5522434-40FF-4AA9-8CA2-19C2687C9FFB</string>
+											<string>6690F7FB-E3C9-4377-8ED4-6A308438E903</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -1495,7 +1495,7 @@
 											<string>/Users/chad</string>
 										</dict>
 										<key>Columns</key>
-										<integer>155</integer>
+										<integer>153</integer>
 										<key>Commands</key>
 										<array/>
 										<key>Directories</key>
@@ -1564,6 +1564,7 @@
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -1597,7 +1598,7 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>39</integer>
+										<integer>41</integer>
 										<key>Session GUID</key>
 										<string>028FE301-6B3D-4A4A-B62D-BE32750803A1</string>
 										<key>Short Lived Single Use</key>
@@ -1621,9 +1622,9 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>679</real>
+										<real>702</real>
 										<key>width</key>
-										<real>1265</real>
+										<real>1250</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -1636,9 +1637,9 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>679</real>
+								<real>702</real>
 								<key>width</key>
-								<real>1265</real>
+								<real>1250</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -1966,7 +1967,7 @@
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>C9210B45-5D5E-4DCE-A3AB-0CE0311D6152</string>
+											<string>BFA543AC-BC08-4575-A4F9-DBE4D6CA7C2F</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -2375,11 +2376,12 @@
 											<string>/Users/chad</string>
 										</dict>
 										<key>Columns</key>
-										<integer>155</integer>
+										<integer>153</integer>
 										<key>Commands</key>
 										<array/>
 										<key>Directories</key>
 										<array>
+											<string>/Users/chad</string>
 											<string>/Users/chad</string>
 											<string>/Users/chad</string>
 											<string>/Users/chad</string>
@@ -2434,7 +2436,7 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>39</integer>
+										<integer>41</integer>
 										<key>Session GUID</key>
 										<string>6D9BC2FE-25B5-4774-BBBF-AE9A25315B5C</string>
 										<key>Short Lived Single Use</key>
@@ -2458,9 +2460,9 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>679</real>
+										<real>702</real>
 										<key>width</key>
-										<real>1265</real>
+										<real>1250</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -2473,9 +2475,9 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>679</real>
+								<real>702</real>
 								<key>width</key>
-								<real>1265</real>
+								<real>1250</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -2487,7 +2489,7 @@
 						<key>Tab GUID</key>
 						<string>101FE163-797F-4717-95DA-6C60E3DD01F6</string>
 						<key>Title Override</key>
-						<string>Sandbox</string>
+						<string>Sandbox test</string>
 					</dict>
 					<dict>
 						<key>Root</key>
@@ -2809,7 +2811,7 @@
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>643FE5D1-331A-4AAD-A334-A96B604F1398</string>
+											<string>B06D65CA-AC10-415B-AFE8-E90F744DBD2A</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -3218,7 +3220,7 @@
 											<string>/Users/chad</string>
 										</dict>
 										<key>Columns</key>
-										<integer>155</integer>
+										<integer>153</integer>
 										<key>Commands</key>
 										<array/>
 										<key>Directories</key>
@@ -3239,11 +3241,12 @@
 											<string>/</string>
 											<string>/</string>
 											<string>/Users/chad</string>
+											<string>/Users/chad</string>
 										</array>
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/chad/dev/calc-block</string>
+											<string>/Users/chad</string>
 										</dict>
 										<key>Hostname to Shell</key>
 										<dict/>
@@ -3277,7 +3280,7 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>39</integer>
+										<integer>41</integer>
 										<key>Session GUID</key>
 										<string>5567543E-A428-4E9F-B36F-20242F32AA5A</string>
 										<key>Short Lived Single Use</key>
@@ -3301,9 +3304,9 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>679</real>
+										<real>702</real>
 										<key>width</key>
-										<real>1265</real>
+										<real>1250</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -3316,9 +3319,9 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>679</real>
+								<real>702</real>
 								<key>width</key>
-								<real>1265</real>
+								<real>1250</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -3361,13 +3364,13 @@
 				<key>Use Transparency</key>
 				<true/>
 				<key>Width</key>
-				<real>1265</real>
+				<real>1250</real>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
 				<real>1440</real>
 				<key>Y Origin</key>
-				<real>591</real>
+				<real>568</real>
 			</dict>
 		</array>
 		<key>Second Profile</key>
