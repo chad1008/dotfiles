@@ -1,46 +1,46 @@
 [
-    {
-        "clean" : ["~"],
-        "link" : {
-            "~/.gitconfig" : {
-                "force" : true,
-                "path" : "Git/gitconfig"
-            },
-            "~/.gitignore_global" : {
-                "path" : "Git/gitignore_global"
-            },
-            "~/.zshrc" : {
-                "force" : true,
-                "path" : "Zsh/zshrc"
-            },
-            "~/.p10k.zsh" : {
-                    "force" : true,
-                    "path" : "Zsh/p10k.zsh"
-            },
-            "~/Library/Application Support/Code/User/settings.json" : {
-                "force" : true,
-                "path" : "System/VSCode/settings.json"
-            },
-            "~/Library/Application Support/Code/User/snippets" : {
-                "force" : true,
-                "path" : "System/VSCode/snippets"
-            },
-            "~/Library/Application Support/iTerm2/DynamicProfiles" : {
-                "force" : true,
-                "path" : "System/iTerm2/DynamicProfiles"
-            }
-        },
-        "shell" : [
-            {
-                "command" : "defaults write com.googlecode.iterm2 PrefsCustomFolder -string '~/.dotfiles/System/iTerm2'",
-                "description" : "Specifying iTerm2's preferences directory...",
-                "quiet" : true
-            },
-            {
-                "command" : "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true",
-                "description" : "Activating iTerm2's custom preferences directory...",
-                "quiet" : true
-            }
-        ]
-    }
+  {
+    "clean": ["~"],
+    "link": {
+      "~/.gitconfig": {
+        "force": true,
+        "path": "Git/gitconfig"
+      },
+      "~/.gitignore_global": {
+        "path": "Git/gitignore_global"
+      },
+      "~/.zshrc": {
+        "force": true,
+        "path": "Zsh/zshrc"
+      },
+      "~/.p10k.zsh": {
+        "force": true,
+        "path": "Zsh/p10k.zsh"
+      },
+      "~/Library/Application Support/Code/User/settings.json": {
+        "force": true,
+        "path": "System/VSCode/settings.json"
+      },
+      "~/Library/Application Support/Code/User/snippets": {
+        "force": true,
+        "path": "System/VSCode/snippets"
+      },
+      "~/Library/Preferences/com.googlecode.iterm2.plist": {
+        "force": true,
+        "path": "System/iTerm2/com.googlecode.iterm2.plist"
+      }
+    },
+    "shell": [
+      {
+        "command": "defaults write com.googlecode.iterm2 PrefsCustomFolder -string '~/.dotfiles/System/iTerm2'",
+        "description": "Specifying iTerm2's preferences directory...",
+        "quiet": true
+      },
+      {
+        "command": "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true",
+        "description": "Activating iTerm2's custom preferences directory...",
+        "quiet": true
+      }
+    ]
+  }
 ]
