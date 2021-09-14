@@ -31,11 +31,20 @@ gitcheat bisect
 //  gbsb = git bisect bad
 //  gbsr = git bisect reset
 ```
-You can add keywords and create new sections directly in `Git/aliases.sh`. Just be mindful of the formatted requirements described at the top of the file.
+You can add keywords and create new sections directly in `Git/aliases.sh`. Just be mindful of the formatting requirements described at the top of the file.
 
-Run `gitcheat other` to see the current alias for this function.
+Run `gitcheat cheat` to see the current alias for this function.
 
 ### nuke_git_branches
-If you ever find your local repo cluttered with uneeded or obsolete branches, `nuke_git_branches` is here to help. After a confirmation prompt, it will delete all branches except for the current repos main branch, regardless of how you've named said main branch. This utilizes `-d` flag and not the more destructive `-D`, so you won't lose any unmerged branches. Those you'll need to delete by hand.
+*Relies on the Oh-My-Zsh Git plugin*
+
+If you ever find your local repo cluttered with uneeded or obsolete branches, `nuke_git_branches` is here to help. After a confirmation prompt, it will delete all branches except for the current repo's main branch, regardless of how you've named said main branch. This utilizes `-d` flag and not the more destructive `-D`, so you won't lose any unmerged branches. Those you'll need to delete by hand.
 
 Run `gitcheat branch` to see the current alias for this function.
+
+### git_merge_main
+*Relies on the Oh-My-Zsh Git plugin*
+
+Quickly merge the current branch into the repo's main branch. Does not handle commits, you should still do those before executing this function.
+
+Run `gitcheat merge` to see the current alias for this function.

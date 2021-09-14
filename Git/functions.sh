@@ -68,3 +68,15 @@ nuke_git_branches() {
         fi
     fi
 }
+
+# Merge current branch into main branch
+git_merge_main() {
+    declare BRANCH_TO_MERGE=$(git_current_branch)
+    
+    if [[ $BRANCH_TO_MERGE == $(git_main_branch) ]]; then
+        echo "Already on '$(git_main_branch)'"
+    else
+        git checkout $(git_main_branch)
+        git merge ${BRANCH_TO_MERGE}
+    fi
+}

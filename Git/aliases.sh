@@ -51,6 +51,7 @@ alias     gn='nuke_git_branches'
 alias     gr='git remote'
 
 alias     gm='git merge'
+alias    gmm='git_merge_main'
 
 # Push and pull
 # keywords: push pull
@@ -68,7 +69,7 @@ alias   gbsb='git bisect bad'
 alias   gbsr='git bisect reset'
 
 # Other
-# keywords: rebase reset cherry-pick other
+# keywords: rebase reset cherry-pick other cheat
 alias    grst='git reset'
 alias   grsth='git reset --hard'
 
