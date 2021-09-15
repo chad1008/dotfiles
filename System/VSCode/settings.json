@@ -17,5 +17,6 @@
   },
   "explorer.confirmDelete": false,
   "editor.bracketPairColorization.enabled": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "window.newWindowDimensions": "inherit"
 }
