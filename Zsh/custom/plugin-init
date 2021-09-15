@@ -1,5 +1,15 @@
-#autoload
-#Loading substring search: https://github.com/zsh-users/zsh-history-substring-search
-source ~/.dotfiles/Zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+## Loading substring search: https://github.com/zsh-users/zsh-history-substring-search
+source $DOTFILES/Zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+## Load bash-insulter
+#  Start with custom messages
+if [ -f $DOTFILES/Zsh/custom/plugins/bash-insulter/bash.command-not-found-messages ]; then
+    . $DOTFILES/Zsh/custom/plugins/bash-insulter/bash.command-not-found-messages
+fi
+# Then load the plugin itself
+if [ -f $DOTFILES/Zsh/custom/plugins/bash-insulter/bash.command-not-found ]; then
+    . $DOTFILES/Zsh/custom/plugins/bash-insulter/bash.command-not-found
+fi
