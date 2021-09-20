@@ -44,8 +44,8 @@ Calypso:Restore Window Arrangement</string>
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
-			<string>Gutenberg Development
-Gutenberg Development:Restore Window Arrangement</string>
+			<string>Gutenberg
+Gutenberg:Restore Window Arrangement as Tabs</string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
@@ -3932,7 +3932,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>ssh wpcom</string>
+			<string>ssh wpcom &amp;&amp; cd public_html</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
