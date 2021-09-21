@@ -18,5 +18,5 @@
   "explorer.confirmDelete": false,
   "editor.bracketPairColorization.enabled": true,
   "explorer.confirmDragAndDrop": false,
-  "window.newWindowDimensions": "inherit"
+  "window.newWindowDimensions": "offset"
 }
