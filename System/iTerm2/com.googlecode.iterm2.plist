@@ -6110,7 +6110,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>DB32DA2C-65C7-466D-AF23-4D0E7B2C9934</string>
+											<string>8AF43996-B740-4D08-B810-96F0BD156524</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -6511,9 +6511,6 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<array/>
 										<key>Directories</key>
 										<array>
-											<string>/Users/chad</string>
-											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
-											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
@@ -6611,6 +6608,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -6647,7 +6647,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>58</integer>
 										<key>Session GUID</key>
-										<string>9137D24D-B5AC-48B7-A1BE-BFE941FF1B57</string>
+										<string>81BA8040-38EC-4D96-BA1F-30CA4112EF16</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -6989,7 +6989,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>393DA265-B208-4A6E-BF3A-E0155B14D513</string>
+											<string>38AA1153-B0D1-41C6-8243-7265250AA7C8</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -7417,6 +7417,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -7453,7 +7455,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>58</integer>
 										<key>Session GUID</key>
-										<string>FF4EC3AF-7A8A-4B9C-B509-C5E5CA6BB6CB</string>
+										<string>F57A2AC2-20E2-449B-A0E5-31E49E10C9CC</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -7539,9 +7541,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>1607</real>
+				<real>794</real>
 				<key>Y Origin</key>
-				<real>525</real>
+				<real>340</real>
 			</dict>
 		</array>
 		<key>Calypso</key>
@@ -7891,7 +7893,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>DB32DA2C-65C7-466D-AF23-4D0E7B2C9934</string>
+											<string>18AEE489-79EF-4B7A-BE78-5591AC8AE4DD</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -8264,7 +8266,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<key>Terminal Type</key>
 											<string>xterm-256color</string>
 											<key>Title Components</key>
-											<integer>34</integer>
+											<integer>35</integer>
 											<key>Transparency</key>
 											<real>0.0</real>
 											<key>Unlimited Scrollback</key>
@@ -8292,9 +8294,6 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<array/>
 										<key>Directories</key>
 										<array>
-											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
-											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
-											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
 											<string>/Users/chad/dev/a8c-projects/wp-calypso</string>
@@ -8392,6 +8391,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -8415,7 +8417,6 @@ Gutenberg Development:Restore Window Arrangement</string>
 										</dict>
 										<key>Overridden Fields</key>
 										<array>
-											<string>Allow Title Setting</string>
 											<string>Name</string>
 											<string>Original Guid</string>
 											<string>Guid</string>
@@ -8429,7 +8430,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>58</integer>
 										<key>Session GUID</key>
-										<string>9137D24D-B5AC-48B7-A1BE-BFE941FF1B57</string>
+										<string>7182ACB7-23E9-4E7A-B2D5-3DB1373D7A1F</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -8773,7 +8774,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>393DA265-B208-4A6E-BF3A-E0155B14D513</string>
+											<string>7D5B7D5B-290D-4C20-90F0-D31B272EB48A</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -9227,6 +9228,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -9264,7 +9268,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>58</integer>
 										<key>Session GUID</key>
-										<string>FF4EC3AF-7A8A-4B9C-B509-C5E5CA6BB6CB</string>
+										<string>E49035AF-8949-458B-8C60-96C32D9C8C43</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -9313,11 +9317,11 @@ Gutenberg Development:Restore Window Arrangement</string>
 							<true/>
 						</dict>
 						<key>Tab GUID</key>
-						<string>5C35DE90-4EBF-47CE-ABF6-92A9D74A23AC</string>
+						<string>DA3CB235-7871-47DA-AF2E-8A54680E17AF</string>
 					</dict>
 				</array>
 				<key>TerminalGuid</key>
-				<string>pty-93CC7772-5A72-4F86-BCAE-B34C98469AFD</string>
+				<string>pty-F3356B0A-E756-4DDD-B57E-9D98A368FA25</string>
 				<key>Toolbelt</key>
 				<dict>
 					<key>Profiles</key>
@@ -9350,9 +9354,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>987</real>
+				<real>793</real>
 				<key>Y Origin</key>
-				<real>493</real>
+				<real>311</real>
 			</dict>
 		</array>
 		<key>Default</key>
@@ -9377,7 +9381,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Saved Window Type</key>
 				<integer>0</integer>
 				<key>Screen</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>Scroller Width</key>
 				<real>15</real>
 				<key>Selected Tab Index</key>
@@ -9700,7 +9704,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>28211C2A-05F5-45A9-86F6-A31E70C8E896</string>
+											<string>16D7B2EB-24AA-4AFB-B80C-DAA368A683B5</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -10172,6 +10176,13 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
 											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
+											<string>/Users/chad/dev</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -10231,7 +10242,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>height</key>
 										<real>962</real>
 										<key>width</key>
-										<real>1362</real>
+										<real>1361</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -10246,7 +10257,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 								<key>height</key>
 								<real>962</real>
 								<key>width</key>
-								<real>1362</real>
+								<real>1361</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -10576,7 +10587,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>E7C2B685-ACD4-47E2-A284-A16A9AD26A4D</string>
+											<string>B4DE95E0-E845-4E31-9D87-36692F02AFED</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -11028,6 +11039,18 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad</string>
 											<string>/Users/chad</string>
 											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
+											<string>/Users/chad</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -11066,7 +11089,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>56</integer>
 										<key>Session GUID</key>
-										<string>93F8D000-9CB0-45EA-89C0-9EFC5CA89635</string>
+										<string>E717B21B-5CC8-47AF-B3B9-F5F96A7AE62C</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -11090,7 +11113,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>height</key>
 										<real>962</real>
 										<key>width</key>
-										<real>1362</real>
+										<real>1361</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -11105,7 +11128,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 								<key>height</key>
 								<real>962</real>
 								<key>width</key>
-								<real>1362</real>
+								<real>1361</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -11150,13 +11173,13 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Use Transparency</key>
 				<true/>
 				<key>Width</key>
-				<real>1362</real>
+				<real>1361</real>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>3674</real>
+				<real>875</real>
 				<key>Y Origin</key>
-				<real>722</real>
+				<real>394</real>
 			</dict>
 		</array>
 		<key>Gutenberg</key>
@@ -11508,7 +11531,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>0D8C57AD-D830-4FC2-8AC8-8C5092128F9F</string>
+											<string>A79BCF07-7015-48C1-BBA3-F0F89F8B4705</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -11992,6 +12015,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -12029,7 +12055,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>47</integer>
 										<key>Session GUID</key>
-										<string>AB32AD47-1B1F-4C74-AED2-7B5E6BB19A3C</string>
+										<string>2BC1ECE0-9E9C-4B3D-868F-0961A3F9AF4B</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -12371,7 +12397,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 												<real>0.51372549019607838</real>
 											</dict>
 											<key>Guid</key>
-											<string>E8B2F733-4609-484F-AC64-74F090CA89D0</string>
+											<string>54F97ADC-5B9E-4491-9880-470C7CB1F8FE</string>
 											<key>Horizontal Spacing</key>
 											<real>1</real>
 											<key>Idle Code</key>
@@ -12781,6 +12807,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
 											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
+											<string>/Users/chad/dev/gutenberg</string>
 										</array>
 										<key>Environment</key>
 										<dict>
@@ -12817,7 +12845,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 										<key>Rows</key>
 										<integer>47</integer>
 										<key>Session GUID</key>
-										<string>1302FEEA-9479-4950-9E57-3FFA5E72EB8E</string>
+										<string>9E556874-25F4-4A7D-BA77-2501794001D0</string>
 										<key>Short Lived Single Use</key>
 										<false/>
 										<key>Should Expect Current Dir Updates</key>
@@ -12903,9 +12931,9 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>1607</real>
+				<real>567</real>
 				<key>Y Origin</key>
-				<real>706</real>
+				<real>573</real>
 			</dict>
 		</array>
 	</dict>
