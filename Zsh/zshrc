@@ -35,6 +35,11 @@ COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
+# chruby autoload config
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.7.2
+
 # Load aliases and functions
 typeset -U my_aliases
 typeset -U my_functions
