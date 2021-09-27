@@ -9,6 +9,8 @@ export dotfiles=$HOME/.dotfiles
 export DOTFILES=$dotfiles
 export ZSH_CUSTOM=$DOTFILES/Zsh/custom
 
+export PATH="/usr/local/sbin:$PATH"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -46,4 +48,4 @@ do
 done
 
 # Zsh Plugin initizlization
-source $ZSH_CUSTOM/plugin-init
+source $ZSH_CUSTOM/plugin-initexport
