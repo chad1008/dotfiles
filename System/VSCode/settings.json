@@ -18,5 +18,8 @@
   "explorer.confirmDelete": false,
   "editor.bracketPairColorization.enabled": true,
   "explorer.confirmDragAndDrop": false,
-  "window.newWindowDimensions": "offset"
+  "window.newWindowDimensions": "offset",
+  "workbench.colorCustomizations" : {
+    "terminal.ansiBrightGreen" : "#389900",
+  }
 }
