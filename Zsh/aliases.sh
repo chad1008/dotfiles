@@ -4,3 +4,6 @@
 
 # Navigation
 alias df='cd $DOTFILES'
+
+# Misc
+alias clr='clear'
