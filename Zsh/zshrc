@@ -30,7 +30,7 @@ fi
 plugins=(git zsh-history-substring-search)
 ZSH_THEME="Agnoster"
 COMPLETION_WAITING_DOTS="true"
-set +H # disable history expansion to preserve ! in double-quotes
+set -K # disable history expansion to preserve ! in double-quotes
 
 # Load Oh-My-Zsh and powerlevel10k
 source $ZSH/oh-my-zsh.sh
