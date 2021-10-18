@@ -6826,7 +6826,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>christmas</string>
+			<string>df &amp;&amp; gpll &amp;&amp; cd &amp;&amp; clr&amp;&amp; christmas</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
