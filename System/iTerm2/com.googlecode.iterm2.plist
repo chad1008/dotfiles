@@ -1981,6 +1981,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -2725,6 +2727,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -3469,6 +3473,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -4213,6 +4219,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -5700,6 +5708,19 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<false/>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.93725490196078431</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.95294117647058818</real>
+				<key>Red Component</key>
+				<real>0.97254901960784312</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -5716,6 +5737,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -6460,6 +6483,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
