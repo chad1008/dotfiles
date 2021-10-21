@@ -20,6 +20,8 @@
   "explorer.confirmDragAndDrop": false,
   "window.newWindowDimensions": "offset",
   "workbench.colorCustomizations": {
+    "terminal.foreground": "#839496",
+    "terminal.selectionBackground": "#073642",
     "terminal.ansiBlack": "#073642",
     "terminal.ansiBrightBlack": "#667e8f",
     "terminal.ansiRed": "#dc322f",
