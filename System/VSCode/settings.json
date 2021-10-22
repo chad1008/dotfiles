@@ -44,5 +44,14 @@
     "editorBracketHighlight.foreground4": "#bd8800",
     "editorBracketHighlight.foreground5": "#db3f00",
     "editorBracketHighlight.foreground6": "#993bf1"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "[Solarized Dark]": {
+      "enabled": true,
+      "rules": {
+        "method": { "foreground": "#6ea9c9" },
+        "method.declaration": { "bold": true, "foreground": "#008ad6" }
+      }
+    }
   }
 }
