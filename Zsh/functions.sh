@@ -16,7 +16,7 @@ pushiterm() {
 
 # Get days until Christmas
 christmas() {
-    CHRISTMAS_DAYMONTH="Oct 23"
+    CHRISTMAS_DAYMONTH="Dec 25"
     CURRENT_YEAR=$(TZ=UTC+4 date -R +"%Y")
     CURRENT_CHRISTMAS=$(date -jf "%b %d %Z %Y" "$CHRISTMAS_DAYMONTH EDT $CURRENT_YEAR" "+%s")
     TODAY=$(date +%s)
