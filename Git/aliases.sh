@@ -56,7 +56,7 @@ alias    gmm='git_merge_main'
 # Push and pull
 # keywords: push pull
 alias   gpsh='git push'
-alias  gpshu='git push -u origin'
+alias  gpshu='git push -u origin $(git_current_branch)'
 alias   gpll='git pull'
 alias     gf='git fetch'
 
