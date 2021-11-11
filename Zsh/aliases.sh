@@ -3,7 +3,7 @@
 ## GENERAL ALIASES
 
 # Navigation
-alias df='cd $DOTFILES'
+alias cddf='cd $DOTFILES'
 
 # Misc
 alias clr='clear'
