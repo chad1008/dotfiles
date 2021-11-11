@@ -18,7 +18,7 @@ pushiterm() {
 christmas() {
     CHRISTMAS_DAYMONTH="Dec 25"
     CURRENT_YEAR=$(TZ=UTC+4 date -R +"%Y")
-    CURRENT_CHRISTMAS=$(date -jf "%b %d %Z %Y" "$CHRISTMAS_DAYMONTH EDT $CURRENT_YEAR" "+%s")
+    CURRENT_CHRISTMAS=$(date -jf "%H:%M:%S %b %d %Z %Y" "23:59:59 $CHRISTMAS_DAYMONTH EDT $CURRENT_YEAR" "+%s")
     TODAY=$(date +%s)
     # If Christmas has passed, bump the target date to next year
     if [[ "${TODAY}" -lt "${CURRENT_CHRISTMAS}" ]]; then
@@ -26,7 +26,7 @@ christmas() {
     else
         COUNTDOWN_YEAR=$(( ${CURRENT_YEAR} + 1 ))
     fi
-    CHRISTMAS=$(date -jf "%b %d %Z %Y" "$CHRISTMAS_DAYMONTH EDT $COUNTDOWN_YEAR" "+%s")
+    CHRISTMAS=$(date -jf "%H:%M:%S %b %d %Z %Y" "23:59:59 $CHRISTMAS_DAYMONTH EDT $COUNTDOWN_YEAR" "+%s")
     COUNTDOWN=$(( (${CHRISTMAS} - ${TODAY})/60/60/24 ))
 
     # Check for short mode. Output the value or get confused on unrecognized input
