@@ -54,4 +54,7 @@
       }
     }
   }
+  "files.watcherExclude": {
+    "**/home/wpcom/public_html/**": true,
+  }
 }
