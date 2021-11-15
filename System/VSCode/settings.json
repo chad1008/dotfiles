@@ -50,11 +50,12 @@
       "enabled": true,
       "rules": {
         "method": { "foreground": "#6ea9c9" },
-        "method.declaration": { "bold": true, "foreground": "#008ad6" }
+        "method.declaration": { "bold": true, "foreground": "#008ad6" },
+        "parameter": { "foreground": "#24a75f" }
       }
     }
-  }
+  },
   "files.watcherExclude": {
-    "**/home/wpcom/public_html/**": true,
+    "**/home/wpcom/public_html/**": true
   }
 }
