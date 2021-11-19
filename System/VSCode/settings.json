@@ -57,5 +57,8 @@
   },
   "files.watcherExclude": {
     "**/home/wpcom/public_html/**": true
-  }
+  },
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 4,
+  "prettier.useTabs": true
 }
