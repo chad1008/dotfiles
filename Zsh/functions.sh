@@ -52,3 +52,16 @@ christmas() {
         fi
     fi
 }
+
+## Audio Controls - requires https://github.com/deweller/switchaudio-osx
+headset() {
+  switchaudiosource -s "Sennheiser SC 130 USB"
+  switchaudiosource -s "Sennheiser SC 130 USB" -t input
+}
+monitoraudio() {
+  switchaudiosource -s "C49RG9x"
+}
+mbpaudio() {
+  switchaudiosource -s "MacBook Pro Speakers"
+  switchaudiosource -s "MacBook Pro Microphone" -t input
+}
