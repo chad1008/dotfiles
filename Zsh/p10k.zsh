@@ -31,7 +31,8 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    os_icon                 # os identifier
+    christmas               # days till christmas
+    # os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
     # prompt_char           # prompt symbol
@@ -1638,6 +1639,11 @@
   # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='at '
+
+  function prompt_christmas() {
+    christmas=$(christmas -s)
+    p10k segment -b 28 -f 124 -i '🎅' -t "%B${christmas}%b"
+  }
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
