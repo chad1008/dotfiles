@@ -9,12 +9,14 @@
 	"workbench.startupEditor": "none",
 	"files.autoSave": "onFocusChange",
 	"prettier.configPath": "",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
+	"[scss]": {
+		"editor.formatOnSave": false
+	  },
 	"explorer.confirmDelete": false,
 	"editor.bracketPairColorization.enabled": true,
 	"explorer.confirmDragAndDrop": false,
@@ -60,6 +62,6 @@
 	},
 	"prettier.singleQuote": true,
 	"prettier.tabWidth": 4,
-  "prettier.useTabs": true,
-"editor.insertSpaces": false
+	"prettier.useTabs": true,
+	"editor.insertSpaces": false
 }
