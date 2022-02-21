@@ -65,3 +65,16 @@ mbpaudio() {
   switchaudiosource -s "MacBook Pro Speakers"
   switchaudiosource -s "MacBook Pro Microphone" -t input
 }
+
+## Meeting Control
+meetstart() {
+    headset
+    slackli status :zoom: "in a meeting" "60 min"
+    node ~/dev/hue/onAir.js
+}
+
+meetend() {
+    monitoraudio
+    slackli status clear
+    node ~/dev/hue/offAir.js
+}
