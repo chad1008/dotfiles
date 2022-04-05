@@ -16,7 +16,10 @@
 	},
 	"[scss]": {
 		"editor.formatOnSave": false
-	  },
+	},
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
 	"explorer.confirmDelete": false,
 	"editor.bracketPairColorization.enabled": true,
 	"explorer.confirmDragAndDrop": false,
@@ -51,9 +54,16 @@
 		"[Solarized Dark]": {
 			"enabled": true,
 			"rules": {
-				"method": { "foreground": "#6ea9c9" },
-				"method.declaration": { "bold": true, "foreground": "#008ad6" },
-				"parameter": { "foreground": "#24a75f" }
+				"method": {
+					"foreground": "#6ea9c9"
+				},
+				"method.declaration": {
+					"bold": true,
+					"foreground": "#008ad6"
+				},
+				"parameter": {
+					"foreground": "#24a75f"
+				}
 			}
 		}
 	},
