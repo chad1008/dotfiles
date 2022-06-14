@@ -69,7 +69,7 @@ alias   gbsb='git bisect bad'
 alias   gbsr='git bisect reset'
 
 # Other
-# keywords: rebase reset cherry-pick other cheat
+# keywords: rebase reset cherry-pick other cheat diff
 alias    grst='git reset'
 alias   grsth='git reset --hard'
 
@@ -79,5 +79,8 @@ alias   grbm='git rebase $(git_main_branch)'
 alias   grba='git rebase abort'
 
 alias    gcp='git cherry-pick'
+
+alias     gd='git diff'
+alias    gdm='git diff $(git_main_branch)'
 
 alias gcheat='gitcheat'
