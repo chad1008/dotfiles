@@ -42,25 +42,25 @@ gitcheat_sed_cleanup() {
     sed -e "s/=/ = /"
 }
 
-# Destroy all branches other than main
+# Clean up local git branches
 nuke_git_branches() {
-    RED='\033[0;31m'
-    GREEN='\033[0;32m'
-    NC='\033[0m'
+    red=$(tput setaf 1)
+    green=$(tput setaf 2)
+    reset=$(tput sgr0)
 
-    branch_list=($(git branch | grep -v "$(git_main_branch)\|*"))
+    branch_list=$(git branch | grep -v "$\(git_main_branch)\|*")
 
-    if [[ ${#branch_list[@]} == 0 ]]; then
-        echo ${GREEN}There are no local branches to remove.${NC}
+    if [[ ${#branch_list[@]} = 0 ]]; then
+        echo "${green}There are no local branches to remove.${reset}"
     elif [[ "$1" = "-i" ]]; then
         count=1
         declare -a to_delete=()
         for b in "${branch_list[@]}"
         do
-            read "?${count} of ${#branch_list[@]}: Delete \"${b}\"? (y/n) " "delete_branch"
+            read -r "?${count} of ${#branch_list[@]}: Delete \"${b}\"? (y/n) " "delete_branch"
             count=$((count+1))
             if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
-                to_delete+=(${b})
+                to_delete+=("${b}")
             elif [[ ! "${delete_branch}" =~ ^[Nn]$ ]]; then
                 echo "Invalid response: \"${delete_branch}\". ${b} will not be deleted."
             fi
@@ -72,18 +72,18 @@ nuke_git_branches() {
             git branch -D "${delete_me}"
         done
     else
-        echo ${RED}You are about to delete "${#branch_list[@]}" local branches:${NC}
+        echo "${red}You are about to delete \"${#branch_list[@]}\" local branches:${reset}"
         printf '%s\n' "${branch_list[@]}"
 
         echo
-        read "?Are you sure? (y/n) " "confirm"
-        if [[ "${confirm}" =~ ^[Yy]$ ]]; then
-            printf "%s\n\n" "${GREEN}Processing...${NC}"
+        read -r "?Are you sure? (y/n) " "confirm"
+        if [[ ${confirm} =~ ^[Yy]$ ]]; then
+            printf "%s\n\n" "${green}Processing...${reset}"
 
-            git checkout $(git_main_branch)
+            git checkout "$(git_main_branch)"
             git branch | grep -v "$(git_main_branch)" |
             xargs git branch -D
-        elif [[ "${confirm}" =~ ^[Nn]$ ]]; then
+        elif [[ ${confirm} =~ ^[Nn]$ ]]; then
             printf "\n%s\n" "Exiting..." 
         else
             printf "\n%s\n%s\n%s\n" "You entered: \"${confirm}\"." "https://cldup.com/Tk7K6KLGlY.gif" "Please use \"y\" or \"n\". Exiting for now!"      
