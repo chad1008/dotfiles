@@ -52,12 +52,31 @@ nuke_git_branches() {
 
     if [[ ${#branch_list[@]} == 0 ]]; then
         echo ${GREEN}There are no local branches to remove.${NC}
+    elif [[ "$1" = "-i" ]]; then
+        count=1
+        declare -a to_delete=()
+        for b in "${branch_list[@]}"
+        do
+            read "?${count} of ${#branch_list[@]}: Delete \"${b}\"? (y/n) " "delete_branch"
+            count=$((count+1))
+            if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
+                to_delete+=(${b})
+            elif [[ ! "${delete_branch}" =~ ^[Nn]$ ]]; then
+                echo "Invalid response: \"${delete_branch}\". ${b} will not be deleted."
+            fi
+        done
+
+        printf "\n%s\n\n" "Deleting the requested branch(es)..."
+        for delete_me in "${to_delete[@]}"
+        do
+            git branch -D "${delete_me}"
+        done
     else
         echo ${RED}You are about to delete "${#branch_list[@]}" local branches:${NC}
         printf '%s\n' "${branch_list[@]}"
 
-        read "?Are you sure? Press \"i\" for interactive mode.(y/n/i) " "confirm"
         echo
+        read "?Are you sure? (y/n) " "confirm"
         if [[ "${confirm}" =~ ^[Yy]$ ]]; then
             printf "%s\n\n" "${GREEN}Processing...${NC}"
 
@@ -65,27 +84,9 @@ nuke_git_branches() {
             git branch | grep -v "$(git_main_branch)" |
             xargs git branch -D
         elif [[ "${confirm}" =~ ^[Nn]$ ]]; then
-            echo "Exiting..."
-        elif [[ "${confirm}" =~ ^[Ii]$ ]]; then 
-            count=1
-            declare -a to_delete=()
-            for b in "${branch_list[@]}"
-            do
-                read "?${count} of ${#branch_list[@]}: Delete \"${b}\"? (y/n) " "delete_branch"
-                count=$((count+1))
-                if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
-                    to_delete+=(${b})
-                elif [[ ! "${delete_branch}" =~ ^[Nn]$ ]]; then
-                    echo "Invalid response: \"${delete_branch}\". ${b} will not be deleted."
-                fi
-            done
-
-            printf "\n%s\n\n" "Deleting the requested branch(es)..."
-            for delete_me in "${to_delete[@]}"
-            do
-                git branch -D "${delete_me}"
-            done
-
+            printf "\n%s\n" "Exiting..." 
+        else
+            printf "\n%s\n%s\n%s\n" "You entered: \"${confirm}\"." "https://cldup.com/Tk7K6KLGlY.gif" "Please use \"y\" or \"n\". Exiting for now!"      
         fi
     fi
 }
