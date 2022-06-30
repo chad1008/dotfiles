@@ -47,7 +47,7 @@ nuke_git_branches() {
     red=$(tput setaf 1)
     green=$(tput setaf 2)
     reset=$(tput sgr0)
-    branch_list=($(git branch | grep -v "$(git_main_branch)" | sed 's/\* //'))
+    branch_list=($(git branch | grep -vE "^\*? *$(git_main_branch)$" | sed 's/\* //'))
 
     if [[ ${#branch_list[@]} = 0 ]]; then
         echo "${green}There are no local branches to remove.${reset}"
@@ -72,7 +72,7 @@ nuke_git_branches() {
         done
     else
         echo "${red}You are about to delete ${#branch_list[@]} local branches:${reset}"
-        printf '%s\n' "${branch_list[@]}"
+        printf '- %s\n' "${branch_list[@]}"
 
         echo
         read -r "?Are you sure? (y/n) " "confirm"
