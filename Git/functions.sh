@@ -72,7 +72,7 @@ nuke_git_branches() {
         done
     else
         echo "${red}You are about to delete ${#branch_list[@]} local branches:${reset}"
-        printf '%s\n' "${branch_list[@]}"
+        printf '- %s\n' "${branch_list[@]}"
 
         echo
         read -r "?Are you sure? (y/n) " "confirm"
