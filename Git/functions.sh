@@ -44,6 +44,7 @@ gitcheat_sed_cleanup() {
 
 # Clean up local git branches
 nuke_git_branches() {
+
     red=$(tput setaf 1)
     green=$(tput setaf 2)
     reset=$(tput sgr0)
@@ -60,6 +61,10 @@ nuke_git_branches() {
             count=$((count+1))
             if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
                 to_delete+=("${b}")
+            elif [[ "${delete_branch}" =~ ^[Qq]$ ]]; then
+                remaining_branches=$((${#branch_list[@]}-${count}+1))
+                echo "Skipping the remaining ${remaining_branches} branches..."
+                break
             elif [[ ! "${delete_branch}" =~ ^[Nn]$ ]]; then
                 echo "Invalid response: \"${delete_branch}\". ${b} will not be deleted."
             fi
