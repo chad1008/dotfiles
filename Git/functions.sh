@@ -43,7 +43,7 @@ gitcheat_sed_cleanup() {
 }
 
 # Clean up local git branches
-nuke_git_branches() {
+trim_branches() {
 
     red=$(tput setaf 1)
     green=$(tput setaf 2)

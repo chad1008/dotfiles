@@ -46,7 +46,8 @@ alias   gcom='git checkout $(git_main_branch)'
 alias     gb='git branch'
 alias    gbd='git branch -d'
 alias    gbD='git branch -D'
-alias     gn='nuke_git_branches'
+alias     tb='trim_branches'
+alias    tbi='trim_branches -i'
 
 alias     gr='git remote'
 
