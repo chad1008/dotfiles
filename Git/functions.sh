@@ -54,8 +54,6 @@ nuke_git_branches() {
         echo "${green}There are no local branches to remove.${reset}"
     elif [[ "$1" = "-i" ]]; then
         declare -a to_delete=()
-        # for b in "${branch_list[@]}"
-        # do
         for ((i = 1; i <= ${#branch_list}; i++)); do
             read -r "?${i} of ${#branch_list}: Delete \"${branch_list[i]}\"? (y/n) " "delete_branch"
             if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
@@ -64,6 +62,13 @@ nuke_git_branches() {
                 remaining_branches=$((${#branch_list[@]}-${i}+1))
                 echo "Skipping the remaining ${remaining_branches} branches..."
                 break
+            elif [[ "${delete_branch}" =~ ^[Aa]$ ]]; then
+                remaining_branches=$((${#branch_list[@]}-${i}+1))
+                echo "Marking the remaining ${red}${remaining_branches}${reset} branches for ${red}deletion${reset}..."
+                    for ((a = i; a <= ${#branch_list}; a++)); do
+                        to_delete+=("${branch_list[a]}")
+                    done
+                    break
             elif [[ ! "${delete_branch}" =~ ^[Nn]$ ]]; then
                 echo "Invalid response: \"${delete_branch}\". ${branch_list[i]} will not be deleted."
             fi
