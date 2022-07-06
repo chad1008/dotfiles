@@ -52,6 +52,7 @@ trim_branches() {
 
     if [[ ${#branch_list[@]} = 0 ]]; then
         echo "${green}There are no local branches to remove.${reset}"
+        return 0
     elif [[ "$1" = "-h" || "$1" = "--help" ]]; then
         echo "Delete local git branches, including the currently checked out branch."
         echo
@@ -89,11 +90,14 @@ trim_branches() {
             fi
         done
 
-        printf "\n%s\n\n" "Deleting the requested branch(es)..."
-        for delete_me in "${to_delete[@]}"
-        do
-            git branch -D "${delete_me}"
-        done
+        if [[ ! ${#to_delete[@]} = 0 ]];then
+            printf "\n%s\n\n" "Deleting the requested branch(es)..."
+            for delete_me in "${to_delete[@]}";do
+                git branch -D "${delete_me}"
+            done
+        else
+            echo "No branches were selected for deletion!"
+        fi
     else
         echo "${red}You are about to delete ${#branch_list[@]} local branches:${reset}"
         printf '- %s\n' "${branch_list[@]}"
@@ -107,7 +111,7 @@ trim_branches() {
             git branch | grep -v "$(git_main_branch)" |
             xargs git branch -D
         elif [[ ${confirm} =~ ^[Nn]$ ]]; then
-            printf "\n%s\n" "Exiting..." 
+            printf "\n%s\n" "Exiting..."
         else
             printf "\n%s\n%s\n%s\n" "You entered: \"${confirm}\"." "https://cldup.com/Tk7K6KLGlY.gif" "Please use \"y\" or \"n\". Exiting for now!"      
         fi
