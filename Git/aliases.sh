@@ -19,6 +19,7 @@ alias     gl='git log --oneline'
 alias     ga='git add'
 alias    gau='git add -u'
 alias    gaa='git add -A'
+alias    gap='git add -p'
 
 alias    gst='git stash'
 alias   gstm='git stash -m'
@@ -26,6 +27,7 @@ alias   gstl='git stash list'
 alias   gsta='git stash apply'
 alias   gstp='git stash pop'
 alias   gstc='git stash clear'
+alias   gstd='git stash drop'
 
 # Committing
 # keywords: commit amend no-edit
