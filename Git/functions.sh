@@ -52,7 +52,22 @@ nuke_git_branches() {
 
     if [[ ${#branch_list[@]} = 0 ]]; then
         echo "${green}There are no local branches to remove.${reset}"
-    elif [[ "$1" = "-i" ]]; then
+    elif [[ "$1" = "-h" || "$1" = "--help" ]]; then
+        echo "Delete local git branches, including the currently checked out branch."
+        echo
+        echo "Usage: trim_branches [-i][-h]"
+        echo
+        echo "Script options:"
+        echo "i   --interactive   Ask for a confirmation before marking each branch for deletion"
+        echo "h   --help          Display this help info"
+        echo
+        echo "Interactive mode options:"
+        echo "y      Mark the current branch for deletion"
+        echo "n      Do not the current branch for deletion"
+        echo "a      Mark the current branch and all remaining branches for deletion"
+        echo "q      Do not the current branch or any remaining branches for deletion"
+        echo
+    elif [[ "$1" = "-i" || "$1" = "--interactive" ]]; then
         declare -a to_delete=()
         for ((i = 1; i <= ${#branch_list}; i++)); do
             read -r "?${i} of ${#branch_list}: Delete \"${branch_list[i]}\"? (y/n) " "delete_branch"
