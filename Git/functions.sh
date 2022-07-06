@@ -71,7 +71,7 @@ trim_branches() {
     elif [[ "$1" = "-i" || "$1" = "--interactive" ]]; then
         declare -a to_delete=()
         for ((i = 1; i <= ${#branch_list}; i++)); do
-            read -r "?${i} of ${#branch_list}: Delete \"${branch_list[i]}\"? (y/n) " "delete_branch"
+            read -r "?${i} of ${#branch_list}: Delete \"${branch_list[i]}\"? (y/n/a/q) " "delete_branch"
             if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
                 to_delete+=("${branch_list[i]}")
             elif [[ "${delete_branch}" =~ ^[Qq]$ ]]; then
