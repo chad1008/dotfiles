@@ -107,13 +107,12 @@ nuke_branches() {
         if [[ ${confirm} =~ ^[Yy]$ ]]; then
             printf "%s\n\n" "${green}Processing...${reset}"
 
-            git checkout "$(git_main_branch)"
-            git branch | grep -v "$(git_main_branch)" |
-            xargs git branch -D
+            git checkout "$(git_main_branch)"            
+            printf '%s\n' "${branch_list[@]}" | xargs git branch -D
         elif [[ ${confirm} =~ ^[Nn]$ ]]; then
             printf "\n%s\n" "Exiting..."
         else
-            printf "\n%s\n%s\n%s\n" "You entered: \"${confirm}\"." "https://cldup.com/Tk7K6KLGlY.gif" "Please use \"y\" or \"n\". Exiting for now!"      
+            printf "\n%s\n%s\n%s\n" "You entered: \"${confirm}\"." "https://cldup.com/Tk7K6KLGlY.gif" "Please use \"y\" or \"n\". Exiting for now!"
         fi
     fi
 }
