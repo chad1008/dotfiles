@@ -103,7 +103,7 @@ nuke_branches() {
         printf '- %s\n' "${branch_list[@]}"
 
         echo
-        read -r "?Are you sure? (y/n) " "confirm"
+        read -r "?Are you sure? (y/N) " "confirm"
         if [[ ${confirm} =~ ^[Yy]$ ]]; then
             printf "%s\n\n" "${green}Processing...${reset}"
 
