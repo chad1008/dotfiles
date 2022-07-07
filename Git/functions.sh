@@ -48,7 +48,7 @@ nuke_branches() {
     red=$(tput setaf 1)
     green=$(tput setaf 2)
     reset=$(tput sgr0)
-    branch_list=($(git branch | grep -vE "^\*? *$(git_main_branch)$" | sed 's/^\*/ /'))
+    branch_list=($(git branch | grep -vE "^\*? *$(git_main_branch)$" | sed 's/[\* ]*//'))
 
     if [[ ${#branch_list[@]} = 0 ]]; then
         echo "${green}There are no local branches to remove.${reset}"
@@ -71,7 +71,7 @@ nuke_branches() {
     elif [[ "$1" = "-i" || "$1" = "--interactive" ]]; then
         declare -a to_delete=()
         for ((i = 1; i <= ${#branch_list}; i++)); do
-            read -r "?${i} of ${#branch_list}: Delete \"${branch_list[i]}\"? (y/n/a/q) " "delete_branch"
+            read -r "?${i} of ${#branch_list[@]}: Delete \"${branch_list[i]}\"? (y/n/a/q) " "delete_branch"
             if [[ "${delete_branch}" =~ ^[Yy]$ ]]; then
                 to_delete+=("${branch_list[i]}")
             elif [[ "${delete_branch}" =~ ^[Qq]$ ]]; then
