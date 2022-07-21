@@ -25,6 +25,10 @@
         "force": true,
         "path": "System/VSCode/snippets"
       },
+      "~/Library/Application Support/Code/User/keybindings.json": {
+        "force": true,
+        "path": "System/VSCode/keybindings.json"
+      },
       "~/Library/Preferences/com.googlecode.iterm2.plist": {
         "force": true,
         "path": "System/iTerm2/com.googlecode.iterm2.plist"
