@@ -64,9 +64,9 @@ nuke_branches() {
         echo
         echo "Interactive mode options:"
         echo "y      Mark the current branch for deletion"
-        echo "n      Do not the current branch for deletion"
+        echo "n      Do not mark the current branch for deletion"
         echo "a      Mark the current branch and all remaining branches for deletion"
-        echo "q      Do not the current branch or any remaining branches for deletion"
+        echo "q      Do not mark the current branch or any remaining branches for deletion"
         echo
     elif [[ "$1" = "-i" || "$1" = "--interactive" ]]; then
         declare -a to_delete=()
@@ -92,7 +92,7 @@ nuke_branches() {
 
         if [[ ! ${#to_delete[@]} = 0 ]];then
             printf "\n%s\n\n" "Deleting the requested branch(es)..."
-            for delete_me in "${to_delete[@]}";do
+            for delete_me in "${to_delete[@]}"; do
                 git branch -D "${delete_me}"
             done
         else
