@@ -44,19 +44,15 @@ gitcheat_sed_cleanup() {
 
 # Clean up local git branches
 nuke_branches() {
-
     red=$(tput setaf 1)
     green=$(tput setaf 2)
     reset=$(tput sgr0)
     branch_list=($(git branch | grep -vE "^\*? *$(git_main_branch)$" | sed 's/[\* ]*//'))
 
-    if [[ ${#branch_list[@]} = 0 ]]; then
-        echo "${green}There are no local branches to remove.${reset}"
-        return 0
-    elif [[ "$1" = "-h" || "$1" = "--help" ]]; then
-        echo "Delete local git branches, including the currently checked out branch."
+    if [[ "$1" = "-h" || "$1" = "--help" ]]; then
+        echo "Delete local git branches."
         echo
-        echo "Usage: trim_branches [-i][-h]"
+        echo "Usage: nuke_branches [-i][-h]"
         echo
         echo "Script options:"
         echo "i   --interactive   Ask for a confirmation before marking each branch for deletion"
@@ -68,6 +64,9 @@ nuke_branches() {
         echo "a      Mark the current branch and all remaining branches for deletion"
         echo "q      Do not mark the current branch or any remaining branches for deletion"
         echo
+    elif [[ ${#branch_list[@]} = 0 ]]; then
+        echo "${green}There are no local branches to remove.${reset}"
+        return 0
     elif [[ "$1" = "-i" || "$1" = "--interactive" ]]; then
         declare -a to_delete=()
         for ((i = 1; i <= ${#branch_list}; i++)); do
@@ -107,7 +106,6 @@ nuke_branches() {
         if [[ ${confirm} =~ ^[Yy]$ ]]; then
             printf "%s\n\n" "${green}Processing...${reset}"
 
-            git checkout "$(git_main_branch)"            
             printf '%s\n' "${branch_list[@]}" | xargs git branch -D
         elif [[ ${confirm} =~ ^[Nn]$ ]]; then
             printf "\n%s\n" "Exiting..."
