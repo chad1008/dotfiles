@@ -80,7 +80,7 @@ alias    grb='git rebase'
 alias   grbi='git rebase -i'
 alias   grbm='git rebase $(git_main_branch)'
 alias   grbc='git rebase --continue'
-alias   grba='git rebase abort'
+alias   grba='git rebase --abort'
 
 alias    gcp='git cherry-pick'
 
