@@ -78,4 +78,5 @@
 	"editor.insertSpaces": false,
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.experimental.stickyScroll.enabled": true,
+	"terminal.integrated.minimumContrastRatio": 1
 }
