@@ -78,6 +78,6 @@
 	"prettier.useTabs": true,
 	"editor.insertSpaces": false,
 	"workbench.iconTheme": "material-icon-theme",
-	"editor.experimental.stickyScroll.enabled": true,
+	"editor.stickyScroll.enabled": true,
 	"terminal.integrated.minimumContrastRatio": 1
 }
