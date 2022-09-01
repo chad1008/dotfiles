@@ -12,6 +12,7 @@
 	"files.autoSave": "onFocusChange",
 	"prettier.configPath": "",
 	"editor.formatOnSave": true,
+	"editor.snippetSuggestions": "top",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
