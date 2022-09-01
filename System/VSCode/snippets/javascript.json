@@ -20,4 +20,11 @@
 		],
 		"description": "A basic arrow function"
 	  },
+	  "useState:": {
+		"prefix": "us",
+		"body": [
+			"const [${1:state}, ${2:setState}] = ${4:React.}useState($3)"
+		],
+		"description": "React.useState"
+	  }
 }
