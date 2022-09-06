@@ -80,3 +80,8 @@ meetend() {
     slackli home send lynne ":large_green_circle: Meeting is all done! :green_heart:"
     node ~/dev/hue/offAir.js
 }
+
+# Expects one positional argument for the number of minutes to wait before clearing slack status
+doggo() {
+    slackli status :dogwalk: "brb, doggo time" "${1} min"
+}
