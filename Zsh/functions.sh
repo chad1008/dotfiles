@@ -138,6 +138,6 @@ morning () {
         message="${text}${exclamation}${emoji}"
     fi
 
-    slackli send "${team_channel}" "${message}"
+    slackli send "${team_channel}" "${message}" --active
     slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
 }
