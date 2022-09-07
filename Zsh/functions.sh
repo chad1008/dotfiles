@@ -85,3 +85,59 @@ meetend() {
 doggo() {
     slackli status :dogwalk: "brb, doggo time" "${1} min"
 }
+
+morning () {
+    # Prepare team greeting
+    greetings=("morning" "good morning" "good morning everyone" "hi" "hello")
+    emoji=("👋"\
+           ":howdy:"\
+           ":blob-wave:"\
+           ":goodmorning:"\
+           ":sun:"\
+           ":sunny:"\
+           "🌅"\
+           ":sun-sun-sun:"\
+           ":sun-happy-sun:"\
+           ":sun-bounce-happy:"\
+           )
+    gifs=("https://cldup.com/HfZ2UOvd5j.gif"\
+        "https://cldup.com/ufvYPXt6QX.gif"\
+        "https://cldup.com/fNTrWry_bT.gif"\
+        "https://cldup.com/oaEpP8M3JK.gif"\
+        "https://cldup.com/MeE0KHuQ52.gif"\
+        "https://cldup.com/rpT3-gzt2s.gif"\
+        "https://cldup.com/hWTzTzmBIa.gif"\
+        )
+    # Generate a number between one and ten
+    CAP=10
+    CHANCE=$RANDOM
+    (( CHANCE %= $CAP ))
+    (( CHANCE += 1 ))
+    # a 10% chance of a gif appearing.
+    if [[ ${CHANCE} -eq 1 ]]; then
+        message=${gifs[ $RANDOM % ${#gifs[@]} + 1 ]}
+    # a 10% of an emoji-only greeting.
+    elif [[ ${CHANCE} -eq 2 ]]; then
+        message=${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}
+    # Otherwise (80%) a text greeting.
+    else
+        text=${greetings[ $RANDOM % ${#greetings[@]} + 1 ]}
+        # 70% chance to include an emoji
+        if [[ $CHANCE -gt 3 ]]; then
+            emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
+        else
+            emoji=""
+        fi
+        # 50% chance text will include an exclamation point
+        if [[ $CHANCE -gt 5 ]]; then
+            exclamation="!"
+        else
+            exclamation=""
+        fi
+
+        message="${text}${exclamation}${emoji}"
+    fi
+
+    slackli send "${team_channel}" "${message}"
+    slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
+}
