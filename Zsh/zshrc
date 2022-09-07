@@ -76,3 +76,9 @@ done
 
 # Zsh Plugin initizlization
 source $ZSH_CUSTOM/plugin-init
+
+# Load .localrc for SUPER SECRET SHIT (at the end)
+if [[ -a ~/.localrc ]]
+then
+	source ~/.localrc
+fi
