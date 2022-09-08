@@ -143,9 +143,10 @@ morning () {
 
         message="${text}${exclamation}${emoji}"
     fi
-
+    startproxy
     slackli send "${team_channel}" "${message}" --active
     slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
+    open -a Slack
 }
 
 night() {
@@ -181,5 +182,7 @@ night() {
 
     message="${text}${exclamation}${emoji}"
     
+    endproxy
     slackli send "${team_channel}" "${message}" --away
+    osascript -e 'quit app "Slack"'
 }
