@@ -499,6 +499,10 @@ Gutenberg Development:Restore Window Arrangement</string>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_CCE8CCF4-11FC-483C-BFBE-4021B5F795D1</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_CCE8CCF4-11FC-483C-BFBE-4021B5F795D1_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -763,13 +767,13 @@ Gutenberg Development:Restore Window Arrangement</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.63137257099151611</real>
+				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.63137257099151611</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.57647061347961426</real>
+				<real>1</real>
 			</dict>
 			<key>Brighten Bold Text</key>
 			<true/>
@@ -3129,7 +3133,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>ssh wpcom</string>
+			<string>ssh -t wpcom 'cd public_html; bash -l'</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -5861,7 +5865,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
