@@ -110,26 +110,32 @@ morning () {
         )
     # Generate a number between one and ten
     CAP=10
-    CHANCE=$RANDOM
-    (( CHANCE %= $CAP ))
-    (( CHANCE += 1 ))
+    main_chance=$RANDOM
+    (( main_chance %= $CAP ))
+    (( main_chance += 1 ))
     # a 10% chance of a gif appearing.
-    if [[ ${CHANCE} -eq 1 ]]; then
+    if [[ ${main_chance} -eq 1 ]]; then
         message=${gifs[ $RANDOM % ${#gifs[@]} + 1 ]}
     # a 10% of an emoji-only greeting.
-    elif [[ ${CHANCE} -eq 2 ]]; then
+    elif [[ ${main_chance} -eq 2 ]]; then
         message=${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}
     # Otherwise (80%) a text greeting.
     else
         text=${greetings[ $RANDOM % ${#greetings[@]} + 1 ]}
+        emoji_chance=$RANDOM
+        (( emoji_chance %= $CAP ))
+        (( emoji_chance += 1 ))
         # 70% chance to include an emoji
-        if [[ $CHANCE -gt 3 ]]; then
+        if [[ $emoji_chance -gt 3 ]]; then
             emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
         else
             emoji=""
         fi
         # 50% chance text will include an exclamation point
-        if [[ $CHANCE -gt 5 ]]; then
+        exclamation_chance=$RANDOM
+        (( exclamation_chance %= $CAP ))
+        (( exclamation_chance += 1 ))
+        if [[ $exclamation_chance -gt 5 ]]; then
             exclamation="!"
         else
             exclamation=""
