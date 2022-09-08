@@ -141,3 +141,39 @@ morning () {
     slackli send "${team_channel}" "${message}" --active
     slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
 }
+
+night() {
+    # Prepare team goodbye
+    farewells=("good night" "good night everyone" "calling it a night" "calling it a day" "I'm headed out" "heading out" "I'm heading out" "signing off")
+    emoji=("👋"\
+           ":bye:"\
+           ":byee:"\
+           ":bye_speech_bubble:"\
+           ":goodnight2:"\
+           )
+    # Generate a number between one and ten
+    CAP=10
+    text=${farewells[ $RANDOM % ${#farewells[@]} + 1 ]}
+    # 50% chance to include an emoji
+    emoji_chance=$RANDOM
+    (( emoji_chance %= $CAP ))
+    (( emoji_chance += 1 ))
+    if [[ $emoji_chance -gt 5 ]]; then
+        emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
+    else
+        emoji=""
+    fi
+    # 50% chance text will include an exclamation point
+    exclamation_chance=$RANDOM
+    (( exclamation_chance %= $CAP ))
+    (( exclamation_chance += 1 ))
+    if [[ $exclamation_chance -gt 5 ]]; then
+        exclamation="!"
+    else
+        exclamation=""
+    fi
+
+    message="${text}${exclamation}${emoji}"
+    
+    slackli send "${team_channel}" "${message}" --away
+}
