@@ -227,3 +227,8 @@ night() {
     osascript -e 'quit app "Slack"'
     unset message
 }
+
+weekend() {
+    night -m "Out for the weekend. See you on Monday 👋 :weekend-2:"
+    slackli status :weekend-2: "Back on monday" "monday 6 am"
+}
