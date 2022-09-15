@@ -87,66 +87,84 @@ doggo() {
 }
 
 morning () {
-    # Prepare team greeting
-    greetings=("morning" "good morning" "good morning everyone" "hi" "hello")
-    emoji=("👋"\
-           ":howdy:"\
-           ":blob-wave:"\
-           ":goodmorning:"\
-           ":sun:"\
-           ":sunny:"\
-           "🌅"\
-           ":sun-sun-sun:"\
-           ":sun-happy-sun:"\
-           ":sun-bounce-happy:"\
-           )
-    gifs=("https://cldup.com/HfZ2UOvd5j.gif"\
-        "https://cldup.com/ufvYPXt6QX.gif"\
-        "https://cldup.com/fNTrWry_bT.gif"\
-        "https://cldup.com/oaEpP8M3JK.gif"\
-        "https://cldup.com/MeE0KHuQ52.gif"\
-        "https://cldup.com/rpT3-gzt2s.gif"\
-        "https://cldup.com/hWTzTzmBIa.gif"\
-        )
-    # Generate a number between one and ten
-    CAP=10
-    main_chance=$RANDOM
-    (( main_chance %= $CAP ))
-    (( main_chance += 1 ))
-    # a 10% chance of a gif appearing.
-    if [[ ${main_chance} -eq 1 ]]; then
-        message=${gifs[ $RANDOM % ${#gifs[@]} + 1 ]}
-    # a 10% of an emoji-only greeting.
-    elif [[ ${main_chance} -eq 2 ]]; then
-        message=${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}
-    # Otherwise (80%) a text greeting.
-    else
-        text=${greetings[ $RANDOM % ${#greetings[@]} + 1 ]}
-        emoji_chance=$RANDOM
-        (( emoji_chance %= $CAP ))
-        (( emoji_chance += 1 ))
-        # 70% chance to include an emoji
-        if [[ $emoji_chance -gt 3 ]]; then
-            emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
-        else
-            emoji=""
-        fi
-        # 50% chance text will include an exclamation point
-        exclamation_chance=$RANDOM
-        (( exclamation_chance %= $CAP ))
-        (( exclamation_chance += 1 ))
-        if [[ $exclamation_chance -gt 5 ]]; then
-            exclamation="!"
-        else
-            exclamation=""
-        fi
+    morning_quiet=false
+    while getopts ":lfqm:" opts
+    do	case "$opts" in
+        l)	message="Good morning! Late start today.";;
+        f)	message="👋 Forgot to say good morning!";;
+        q)  morning_quiet=true;;
+        m)  message="${OPTARG}";;
+        [?])	print >&2 "Usage: $0 [-s] [-d seplist] file ..."
+            exit 1;;
+        esac
+    done
+    shift $OPTIND-1
 
-        message="${text}${exclamation}${emoji}"
+    if [[ -z ${message} ]]; then
+        # Prepare team greeting
+        greetings=("morning" "good morning" "good morning everyone" "hi" "hello")
+        emoji=("👋"\
+            ":howdy:"\
+            ":blob-wave:"\
+            ":goodmorning:"\
+            ":sun:"\
+            ":sunny:"\
+            "🌅"\
+            ":sun-sun-sun:"\
+            ":sun-happy-sun:"\
+            ":sun-bounce-happy:"\
+            )
+        gifs=("https://cldup.com/HfZ2UOvd5j.gif"\
+            "https://cldup.com/ufvYPXt6QX.gif"\
+            "https://cldup.com/fNTrWry_bT.gif"\
+            "https://cldup.com/oaEpP8M3JK.gif"\
+            "https://cldup.com/MeE0KHuQ52.gif"\
+            "https://cldup.com/rpT3-gzt2s.gif"\
+            "https://cldup.com/hWTzTzmBIa.gif"\
+            )
+        # Generate a number between one and ten
+        CAP=10
+        main_chance=$RANDOM
+        (( main_chance %= $CAP ))
+        (( main_chance += 1 ))
+        # a 10% chance of a gif appearing.
+        if [[ ${main_chance} -eq 1 ]]; then
+            message=${gifs[ $RANDOM % ${#gifs[@]} + 1 ]}
+        # a 10% of an emoji-only greeting.
+        elif [[ ${main_chance} -eq 2 ]]; then
+            message=${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}
+        # Otherwise (80%) a text greeting.
+        else
+            text=${greetings[ $RANDOM % ${#greetings[@]} + 1 ]}
+            emoji_chance=$RANDOM
+            (( emoji_chance %= $CAP ))
+            (( emoji_chance += 1 ))
+            # 70% chance to include an emoji
+            if [[ $emoji_chance -gt 3 ]]; then
+                emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
+            else
+                emoji=""
+            fi
+            # 50% chance text will include an exclamation point
+            exclamation_chance=$RANDOM
+            (( exclamation_chance %= $CAP ))
+            (( exclamation_chance += 1 ))
+            if [[ $exclamation_chance -gt 5 ]]; then
+                exclamation="!"
+            else
+                exclamation=""
+            fi
+
+            message="${text}${exclamation}${emoji}"
+        fi
     fi
     startproxy
-    slackli send "${team_channel}" "${message}" --active
+    if [[ "${morning_quiet}" = false ]]; then
+        slackli send "${team_channel}" "${message}" --active
+    fi
     slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
     open -a Slack
+    unset message
 }
 
 night() {
