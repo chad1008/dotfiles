@@ -90,12 +90,16 @@ morning () {
     morning_quiet=false
     while getopts ":lfqm:" opts
     do	case "$opts" in
-        l)	message="Good morning! Late start today.";;
-        f)	message="👋 Forgot to say good morning!";;
-        q)  morning_quiet=true;;
-        m)  message="${OPTARG}";;
-        [?])	print >&2 "Usage: $0 [-s] [-d seplist] file ..."
-            exit 1;;
+        l)	    message="Good morning! Late start today.";;
+        f)	    message="👋 Forgot to say good morning!";;
+        q)      morning_quiet=true;;
+        m)      message="${OPTARG}";;
+        [?])	print >&2 "Invalid option(s)
+        [-q]            Quiet mode. Sends no message to Slack.
+        [-m] message    Specify custom Slack message.
+        [-l]            Send a 'late start' message.
+        [-f]            Send a 'forgot to say good morning' message."
+            return 1;;
         esac
     done
     shift $OPTIND-1
@@ -171,9 +175,11 @@ night() {
     night_quiet=false
     while getopts ":qm:" opts
     do	case "$opts" in
-        q)  night_quiet=true;;
-        m)  message="${OPTARG}";;
-        [?])	print >&2 "Usage: $0 [-s] [-d seplist] file ..."
+        q)      night_quiet=true;;
+        m)      message="${OPTARG}";;
+        [?])	print >&2 "Invalid option(s)
+        [-q]            Quiet mode. Sends no message to Slack.
+        [-m] message    Specify custom Slack message."
             return 1;;
         esac
     done
