@@ -168,39 +168,56 @@ morning () {
 }
 
 night() {
-    # Prepare team goodbye
-    farewells=("good night" "good night everyone" "calling it a night" "calling it a day" "I'm headed out" "heading out" "I'm heading out" "signing off")
-    emoji=("👋"\
-           ":bye:"\
-           ":byee:"\
-           ":bye_speech_bubble:"\
-           ":goodnight2:"\
-           )
-    # Generate a number between one and ten
-    CAP=10
-    text=${farewells[ $RANDOM % ${#farewells[@]} + 1 ]}
-    # 50% chance to include an emoji
-    emoji_chance=$RANDOM
-    (( emoji_chance %= $CAP ))
-    (( emoji_chance += 1 ))
-    if [[ $emoji_chance -gt 5 ]]; then
-        emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
-    else
-        emoji=""
-    fi
-    # 50% chance text will include an exclamation point
-    exclamation_chance=$RANDOM
-    (( exclamation_chance %= $CAP ))
-    (( exclamation_chance += 1 ))
-    if [[ $exclamation_chance -gt 5 ]]; then
-        exclamation="!"
-    else
-        exclamation=""
+    night_quiet=false
+    while getopts ":qm:" opts
+    do	case "$opts" in
+        q)  night_quiet=true;;
+        m)  message="${OPTARG}";;
+        [?])	print >&2 "Usage: $0 [-s] [-d seplist] file ..."
+            return 1;;
+        esac
+    done
+    shift $OPTIND-1
+
+    if [[ -z ${message} ]]; then
+        # Prepare team goodbye
+        farewells=("good night" "good night everyone" "calling it a night" "calling it a day" "I'm headed out" "heading out" "I'm heading out" "signing off")
+        emoji=("👋"\
+            ":bye:"\
+            ":byee:"\
+            ":bye_speech_bubble:"\
+            ":goodnight2:"\
+            )
+        # Generate a number between one and ten
+        CAP=10
+        text=${farewells[ $RANDOM % ${#farewells[@]} + 1 ]}
+        # 50% chance to include an emoji
+        emoji_chance=$RANDOM
+        (( emoji_chance %= $CAP ))
+        (( emoji_chance += 1 ))
+        if [[ $emoji_chance -gt 5 ]]; then
+            emoji=" ${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}"
+        else
+            emoji=""
+        fi
+        # 50% chance text will include an exclamation point
+        exclamation_chance=$RANDOM
+        (( exclamation_chance %= $CAP ))
+        (( exclamation_chance += 1 ))
+        if [[ $exclamation_chance -gt 5 ]]; then
+            exclamation="!"
+        else
+            exclamation=""
+        fi
+
+        message="${text}${exclamation}${emoji}"
     fi
 
-    message="${text}${exclamation}${emoji}"
     
     endproxy
-    slackli send "${team_channel}" "${message}" --away
+    if [[ "${night_quiet}" = false ]]; then
+        slackli send "${team_channel}" "${message}" --away
+    fi
     osascript -e 'quit app "Slack"'
+    unset message
 }
