@@ -81,6 +81,8 @@ meetend() {
     slackli dnd "1 second"
     slackli home send lynne ":large_green_circle: Meeting is all done! :green_heart:"
     node ~/dev/hue/offAir.js
+    osascript -e 'quit app "zoom.us"'
+
 }
 
 # Expects one positional argument for the number of minutes to wait before clearing slack status
