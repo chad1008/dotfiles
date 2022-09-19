@@ -70,13 +70,15 @@ mbpaudio() {
 meetstart() {
     headset
     slackli status :zoom: "in a meeting" "60 min"
+    slackli dnd "60 min"
     slackli home send lynne ":red_circle: Meeting has started! :heart:"
     node ~/dev/hue/onAir.js
 }
 
 meetend() {
     monitoraudio
-    slackli status clear
+    slackli status clear 
+    slackli dnd "1 second"
     slackli home send lynne ":large_green_circle: Meeting is all done! :green_heart:"
     node ~/dev/hue/offAir.js
 }
