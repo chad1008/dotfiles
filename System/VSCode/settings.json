@@ -5,8 +5,8 @@
 	"html.format.endWithNewline": true,
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.fontFamily": "MesloLGS NF",
-	"editor.fontSize": 11,
-	"terminal.integrated.fontSize": 11,
+	"editor.fontSize": 12,
+	"terminal.integrated.fontSize": 12,
 	"window.zoomLevel": 0.5,
 	"workbench.startupEditor": "none",
 	"files.autoSave": "onFocusChange",
@@ -88,5 +88,10 @@
 	"editor.insertSpaces": false,
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.stickyScroll.enabled": true,
-	"terminal.integrated.minimumContrastRatio": 1
+	"terminal.integrated.minimumContrastRatio": 1,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"vscode-pets.petType": "dog",
+	"vscode-pets.petSize": "medium",
+	"vscode-pets.position": "explorer",
+	"vsicons.dontShowNewVersionMessage": true
 }
