@@ -7,7 +7,7 @@
 	"terminal.integrated.fontFamily": "MesloLGS NF",
 	"editor.fontSize": 12,
 	"terminal.integrated.fontSize": 12,
-	"window.zoomLevel": 0.5,
+	"window.zoomLevel": 0.7,
 	"workbench.startupEditor": "none",
 	"files.autoSave": "onFocusChange",
 	"prettier.configPath": "",
