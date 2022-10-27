@@ -995,12 +995,16 @@ Gutenberg Development:Restore Window Arrangement</string>
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
+				<key>0xf702-0x280000-0x7b</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
+					<string>b</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
@@ -1023,12 +1027,16 @@ Gutenberg Development:Restore Window Arrangement</string>
 					<key>Text</key>
 					<string>[1;6C</string>
 				</dict>
-				<key>0xf703-0x280000</key>
+				<key>0xf703-0x280000-0x7c</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
+					<string>f</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -2036,6 +2044,8 @@ Gutenberg Development:Restore Window Arrangement</string>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>Allow modifyOtherKeys</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -2533,12 +2543,16 @@ Gutenberg Development:Restore Window Arrangement</string>
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
+				<key>0xf702-0x280000-0x7b</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
+					<string>b</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
@@ -2561,12 +2575,16 @@ Gutenberg Development:Restore Window Arrangement</string>
 					<key>Text</key>
 					<string>[1;6C</string>
 				</dict>
-				<key>0xf703-0x280000</key>
+				<key>0xf703-0x280000-0x7c</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
+					<string>f</string>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -2709,7 +2727,7 @@ Gutenberg Development:Restore Window Arrangement</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
