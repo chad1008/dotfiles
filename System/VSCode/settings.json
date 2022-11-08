@@ -13,7 +13,7 @@
 	"prettier.configPath": "",
 	"editor.formatOnSave": true,
 	"editor.snippetSuggestions": "top",
-	"[javascript][json][typescript][typescriptreact][css][scss]": {
+	"[javascript][json][typescript][typescriptreact][css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
