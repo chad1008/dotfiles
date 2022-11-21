@@ -7,3 +7,4 @@
 	ff = only
 [core]
 	excludesfile = /Users/chad/.gitignore_global
+	pager = less -FX
