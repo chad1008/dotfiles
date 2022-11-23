@@ -82,5 +82,8 @@
 	"vscode-pets.petSize": "medium",
 	"vscode-pets.position": "explorer",
 	"vsicons.dontShowNewVersionMessage": true,
-	"editor.inlineSuggest.enabled": true
+	"editor.inlineSuggest.enabled": true,
+	"terminal.integrated.env.osx": {
+		"FIG_NEW_SESSION": "1"
+	}
 }
