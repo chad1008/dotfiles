@@ -94,5 +94,4 @@
 			"color": "#008bd62a"
 		}
 	]
-	"typescript.updateImportsOnFileMove.enabled": "always",
 }
