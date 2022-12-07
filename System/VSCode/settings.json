@@ -93,5 +93,7 @@
 			"column": 80,
 			"color": "#008bd62a"
 		}
-	]
+	],
+	"editor.fontFamily": "Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontLigatures": "'calt', 'ss01'",
 }
