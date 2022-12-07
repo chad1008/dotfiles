@@ -88,4 +88,11 @@
 	},
 	"editor.accessibilitySupport": "off",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.rulers": [
+		{
+			"column": 80,
+			"color": "#008bd62a"
+		}
+	]
+	"typescript.updateImportsOnFileMove.enabled": "always",
 }
