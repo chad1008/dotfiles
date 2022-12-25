@@ -44,7 +44,7 @@ christmas() {
 
     # If we aren't in short mode, output message for Christmas day, Christmas eve, and the rest of the year
     if [ $OPTIND -eq 1 ]; then
-        if [[ "${COUNTDOWN}" = 365 ]]; then
+        if [[ "${COUNTDOWN}" = 0 ]]; then
             echo "$(tput bold)$(tput setaf 2)Merry $(tput setaf 1)Christmas$(tput setaf 2)!$(tput setaf 1)!$(tput setaf 2)!$(tput sgr0)"
         elif [[ "${COUNTDOWN}" = 1 ]]; then
             echo "$(tput bold)$(tput setaf 2)Tomorrow $(tput setaf 1)is $(tput setaf 2)the $(tput setaf 1)big $(tput setaf 2)day $(tput setaf 1)!$(tput setaf 2)!$(tput setaf 1)!$(tput sgr0)"
