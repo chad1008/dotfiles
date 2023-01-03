@@ -93,9 +93,5 @@
 			"column": 80,
 			"color": "#008bd62a"
 		}
-	],
-	"editor.fontFamily": "Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
-	"editor.fontLigatures": "'ss01', 'ss19'",
-	"autoHide.hideOnOpen": false,
-	"autoHide.autoHidePanel": false,
+	]
 }
