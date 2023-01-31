@@ -7,7 +7,6 @@
 	"terminal.integrated.fontFamily": "MesloLGS NF",
 	"editor.fontSize": 12,
 	"terminal.integrated.fontSize": 12,
-	"window.zoomLevel": 0.7,
 	"workbench.startupEditor": "none",
 	"files.autoSave": "onFocusChange",
 	"prettier.configPath": "",
@@ -93,5 +92,38 @@
 			"column": 80,
 			"color": "#008bd62a"
 		}
-	]
+	],
+	"totalTypeScript.hideAllTips": false,
+	"totalTypeScript.hideBasicTips": false,
+	"totalTypeScript.hiddenTips": [
+		"type-alias-declaration",
+		"ts-object-type",
+		"basic-types",
+		"optional-object-property",
+		"union-type",
+		"literal-type",
+		"passing-generics-to-types",
+		"typing-function-parameters",
+		"pick-utility-type",
+		"array-type",
+		"variable-type-annotation",
+		"nonnullable-utility-type",
+		"null-keyword",
+		"typeof",
+		"omit-utility-type",
+		"any-type",
+		"function-return-type",
+		"as-assertion",
+		"type-alias-with-generics",
+		"tuple-type",
+		"undefined-keyword",
+		"never-keyword"
+	],
+	"diffEditor.renderSideBySide": false,
+	"github.copilot.enable": {
+		"*": true,
+		"yaml": false,
+		"plaintext": false,
+		"markdown": true
+	}
 }
