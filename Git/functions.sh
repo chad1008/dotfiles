@@ -126,3 +126,17 @@ git_merge_main() {
         git merge ${BRANCH_TO_MERGE}
     fi
 }
+
+# Copy last commit's SHA to clipboard
+copy_last_commit() {
+    last_sha=$(git rev-parse --short HEAD)
+    echo "${last_sha}" | tr -d '\n' | pbcopy
+    echo "SHA copied to clipboard: ${last_sha}"
+}
+
+# Commit and copy SHA to clipboard
+commit_and_copy() {
+    if [[ -z "$1" ]]; then git commit; fi
+    if [[ -n "$1" ]]; then git commit -m "$1"; fi
+    copy_last_commit
+}

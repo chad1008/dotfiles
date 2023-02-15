@@ -32,11 +32,17 @@ alias   gstd='git stash drop'
 # Committing
 # keywords: commit amend no-edit
 alias     gc='git commit'
+alias    gcc='git commit && copy_last_commit'
 alias    gcm='git commit -m'
+alias    gccm='commit_and_copy'
 alias    gcu='git add -u && git commit'
+alias    gccu='git add -u && git commit && copy_last_commit'
 alias   gcum='git add -u && git commit -m'
+alias   gccum='git add -u && commit_and_copy'
 alias    gca='git add -A && git commit'
+alias    gcca='git add -A && git commit && copy_last_commit'
 alias   gcam='git add -A && git commit -m'
+alias   gccam='git add -A && commit_and_copy'
 alias    gcA='git commit --amend'
 alias   gcAn='git commit --amend --no-edit'
 
