@@ -140,3 +140,9 @@ commit_and_copy() {
     if [[ "$1" = '-m' && -n $2 ]]; then git commit -m "$2" && copy_last_commit; fi
     if [[ "$1" = '-m' && -z $2 ]]; then echo "error: switch \`m' requires a value"; fi
 }
+
+# A quick fixup commit
+quick_fixup() {
+    if [[ -n "$1" ]]; then git commit --fixup "${1}" && git rebase -i "${1}"^ --autosquash; fi
+    if [[ -z "$1" ]]; then echo "Please provide a commit SHA to fixup"; fi
+}
