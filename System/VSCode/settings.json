@@ -132,5 +132,23 @@
 		"yaml": false,
 		"plaintext": false,
 		"markdown": true
+	},
+	"todo-tree.general.tags": ["TODO","FIXME","BUG", "NTS"],
+	"todo-tree.highlights.defaultHighlight": {
+		"gutterIcon": true,
+		"type": "text-and-comment"
+	},
+	"todo-tree.highlights.customHighlight": {
+		"TODO": {
+			"background":"#fdf989",
+			"foreground": "#000",
+			"iconColour": "#006000",
+		},
+		"NTS": {
+			"icon": "note",
+			"background": "#00006b",
+			"foreground": "#fff",
+			"gutterIcon": true
+		},
 	}
 }
