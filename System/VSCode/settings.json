@@ -119,7 +119,12 @@
 		"type-alias-with-generics",
 		"tuple-type",
 		"undefined-keyword",
-		"never-keyword"
+		"never-keyword",
+		"type-predicate",
+		"in-operator-narrowing",
+		"conditional-type",
+		"generic-slots-in-functions",
+		"returntype-utility-type"
 	],
 	"diffEditor.renderSideBySide": false,
 	"github.copilot.enable": {
