@@ -171,7 +171,7 @@ morning () {
     if [[ "${morning_quiet}" = false ]]; then
         slackli send "${team_channel}" "${message}" --active
     fi
-    slackli title "Code Wrangler and GIF curator on Team Calypso 🎄$(christmas -s)🎄"
+    slackli status clear
     open -a Slack
     unset message
 }
