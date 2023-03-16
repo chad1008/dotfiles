@@ -124,7 +124,17 @@
 		"in-operator-narrowing",
 		"conditional-type",
 		"generic-slots-in-functions",
-		"returntype-utility-type"
+		"returntype-utility-type",
+		"interface-declaration",
+		"extract-utility-type",
+		"type-alias-with-multiple-generics",
+		"keyof",
+		"mapped-type",
+		"remapping-in-mapped-type",
+		"exclude-utility-type",
+		"non-null-expression",
+		"as-const",
+		"as-const-on-object"
 	],
 	"diffEditor.renderSideBySide": false,
 	"github.copilot.enable": {
@@ -142,13 +152,16 @@
 		"TODO": {
 			"background":"#fdf989",
 			"foreground": "#000",
-			"iconColour": "#006000",
+			"iconColour": "#006000"
 		},
 		"NTS": {
 			"icon": "note",
 			"background": "#00006b",
 			"foreground": "#fff",
 			"gutterIcon": true
-		},
-	}
+		}
+	},
+	"cSpell.userWords": [
+		"Creds"
+	]
 }
