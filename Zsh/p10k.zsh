@@ -1641,7 +1641,7 @@
   # typeset -g POWERLEVEL9K_TIME_PREFIX='at '
 
   function prompt_christmas() {
-    christmas=$(christmas -s)
+    christmas=$(countdown -sa -d 'Dec 25')
     p10k segment -b 28 -f 124 -i '🎅' -t "%B${christmas}%b"
   }
 

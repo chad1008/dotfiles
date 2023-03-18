@@ -1,0 +1,123 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+
+usage() {
+	printf "%s\n\n" "Countdown to a special date"
+	printf "%s\n\n" "Usage: countdown.sh [ -s ] [ -d ] date [ -n ] name [ -e ] text [ -c ] text [ -a ]"
+    printf "%s\n" "[ -s ]        Short mode. Outputs only the number of days."
+    printf "%s\n" "[ -a ]        Annual mode. Automatically bump to next year after the date has passed."
+	printf "%s\n" "[ -d ] date   Date in the format of \"Dec 25\""
+	printf "%s\n" "[ -n ] name   (optional) Name of the event, used in the output"
+	printf "%s\n" "[ -e ] text   (optional) Desired output for the day before the event"
+	printf "%s\n\n" "[ -c ] text   (optional) Celebration output for the day of the event"
+}
+
+short=false
+current_timezone=$(date -j +"%Z")
+current_year=$(TZ=${current_timezone} date -j "+%Y")
+countdown_year=${current_year}
+target_daymonth=''
+today=$(date -jf "%b %d %Z" "$(date -j "+%b %d") ${current_timezone}" "+%s")
+annual=false
+name=''
+eve_text=''
+celebration=''
+
+while getopts ":sd:n:e:c:ah" opt; do
+	case $opt in
+		s)
+			short=true
+			;;
+		d)
+			target_daymonth=$OPTARG
+			;;
+		a)
+			annual=true
+			;;
+		n)
+			name=$OPTARG
+			;;
+		e)
+			eve_text=$OPTARG
+			;;
+		c)
+			celebration=$OPTARG
+			;;
+		h)
+			usage
+			exit 0
+			;;
+		\?)
+			printf "%s\n\n" "Countdown: Invalid option: -$OPTARG" >&2
+			usage
+			exit 1
+			;;
+		:)
+			echo "Option -$OPTARG requires an argument." >&2
+			exit 1
+			;;
+	esac
+done
+shift $((OPTIND-1))
+
+if [[ -z "${target_daymonth}" ]]; then
+	echo "No target date provided. Please use the -d flag to provide a date in the format of \"Dec 25\""
+	exit 1
+fi
+
+# If we aren't in annual mode and the target date has passed, bump the target date to next year
+if "${annual}" && [[ "${today}" -gt "$(date -jf "%b %d" "${target_daymonth}" +%s )" ]]; then
+	countdown_year=$(( current_year + 1 ))
+fi
+
+TARGET_DATE=$(( $(date -jf "%b %d %Y" "${target_daymonth} ${countdown_year}" "+%s")/86400 ))
+today=$(( today/86400 ))
+
+COUNTDOWN=$(( TARGET_DATE - today ))
+
+# If we aren't in short mode, output message for Christmas day, Christmas eve, and the rest of the year
+if [ $short = false ]; then
+	if [[ "${COUNTDOWN}" = 0 ]]; then
+		if [[ -n $celebration ]]; then
+			echo "${celebration}"
+		else
+			if [[ -n $name ]]; then
+				echo "${name} 🎉"
+			else
+				echo "Today's the big day!"
+			fi
+		fi
+	elif [[ "${COUNTDOWN}" = 1 ]]; then
+		if [[ -n $eve_text ]]; then
+			echo "${eve_text}"
+		else
+			if [[ -n $name ]]; then
+				echo "${name} tommorrow!"
+			else
+				echo "Only one more day!"
+			fi
+		fi
+	elif [[ "${COUNTDOWN}" = -1 ]]; then
+		if [[ -n $name ]]; then
+			echo "${name} was yesterday"
+		else
+			echo "The countdown ended yesterday"
+		fi
+	elif [[ "${COUNTDOWN}" -lt -1 ]]; then
+		if [[ -n $name ]]; then
+			echo "${COUNTDOWN#-} days since ${name}"
+		else
+			echo "The countdown ended ${COUNTDOWN#-} days ago"
+		fi
+	else 
+		if [[ -n $name ]]; then
+			echo "${COUNTDOWN} days until ${name}!"
+		else
+			echo "${COUNTDOWN} days to go!"
+		fi
+	fi
+else
+	echo $COUNTDOWN
+fi
+

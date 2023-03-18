@@ -10,7 +10,7 @@
 # which will trigger the default if it's set in Slackli.
 
 source ~/.zshrc
-countdown_value=$(christmas -s)
+# countdown_value=$(christmas -s)
 sed -i '' -e "s/\([0-9].*\)\( :christmas_tree:\)/${countdown_value}\2/g" ~/dev/slackli/config.json
 
 current_status=$( slackli $1 getStatus $2 )
@@ -30,5 +30,3 @@ if ([[ -z $emoji ]] && [[ -z $text ]]) || \
    [[ $text != "${countdown_value} :christmas_tree:" ]]); then
 	slackli $1 status clear
 fi
-
-
