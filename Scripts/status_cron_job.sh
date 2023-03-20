@@ -28,10 +28,10 @@ fi
 
 countdown_value=$(countdown -s $annual -d "$countdown_date")
 
-sed -i '' -e "s/\([0-9].*\)\( ${countdown_emoji}\)/${countdown_value}\2/g" ~/dev/slackli/config.json
+# The default status is only modified if the text is 1-3 digits followed by the right emoji.
+sed -i '' -e "s/\([0-9]{1,3}\)\( ${countdown_emoji}\)/${countdown_value}\2/g" ~/dev/slackli/config.json
 
 current_status=$( slackli ${workspace} getStatus ${username} )
-
 current_emoji=$(echo $current_status | /opt/homebrew/bin/jq -r '.emoji')
 curent_text=$(echo $current_status | /opt/homebrew/bin/jq -r '.text')
 
