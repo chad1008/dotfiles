@@ -2,7 +2,7 @@
 # shellcheck disable=all
 
 # This script is meant to be run as a cron job.
-# It starts by updating all default status that look like christmas countdowns
+# It starts by updating all default status that look like relevant countdowns
 # to the correct value.
 # Then it checks the current status for the provided workspace ($1) and
 # username ($2).
@@ -28,7 +28,12 @@ fi
 
 countdown_value=$(countdown -s $annual -d "$countdown_date")
 
-# The default status is only modified if the text is 1-3 digits followed by the right emoji.
+# The default status is only modified if the text is 1-3 digits followed by the
+# right emoji.
+# This updates ALL default statuses that match the the current workspace's 
+# countdown_emoji`.
+# In the future, I should clean this up so that two workspaces could safely use
+# the same emoji for different dates.
 sed -i '' -e "s/\([0-9]{1,3}\)\( ${countdown_emoji}\)/${countdown_value}\2/g" ~/dev/slackli/config.json
 
 current_status=$( slackli ${workspace} getStatus ${username} )
@@ -45,5 +50,5 @@ if ([[ -z $current_emoji ]] && [[ -z $curent_text ]]) || \
    ([[ $current_emoji = "${countdown_emoji}" ]] && \
    [[ $curent_text =~ "^[0-9]{1,3} ${countdown_emoji}$" ]] && \
    [[ $curent_text != "${countdown_value} ${countdown_emoji}" ]]); then
-	slackli $1 status clear
+	slackli ${workspace} status clear
 fi
