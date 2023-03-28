@@ -34,7 +34,7 @@ countdown_value=$(countdown -s $annual -d "$countdown_date")
 # countdown_emoji`.
 # In the future, I should clean this up so that two workspaces could safely use
 # the same emoji for different dates.
-sed -i '' -e "s/\([0-9]{1,3}\)\( ${countdown_emoji}\)/${countdown_value}\2/g" ~/dev/slackli/config.json
+sed -i '' -e "s/\([0-9].*\)\( ${countdown_emoji}\)/${countdown_value}\2/g" ~/dev/slackli/config.json
 
 current_status=$( slackli ${workspace} getStatus ${username} )
 current_emoji=$(echo $current_status | /opt/homebrew/bin/jq -r '.emoji')
