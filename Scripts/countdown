@@ -10,7 +10,7 @@ usage() {
 	printf "%s\n" "[ -d ] date   Date in the format of \"Dec 25\""
 	printf "%s\n" "[ -n ] name   (optional) Name of the event, used in the output"
 	printf "%s\n" "[ -e ] text   (optional) Desired output for the day before the event"
-	printf "%s\n\n" "[ -c ] text   (optional) Celebration output for the day of the event"
+	printf "%s\n\n" "[ -c ] text (optional) Celebration output for the day of the event"
 }
 
 short=false
