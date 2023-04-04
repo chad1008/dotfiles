@@ -22,14 +22,14 @@ dayOf=''
 # The latter will pass the proper `annual mode` flag.
 if [[ $workspace = home ]]; then
    countdown_emoji=":christmas_tree:"
-   countdown_date="Apr 4"
+   countdown_date="Dec 25"
    annual='-a'
    dayOf='Merry Christmas!'
 elif [[ $workspace = a8c ]]; then
    countdown_emoji=":christmas_tree:"
    countdown_date="Dec 25"
    annual='-a'
-   dayOf='Merry Christmas!'
+   dayOf='Happy Holidays!'
 fi
 
 #  Default status is only set if the values are defined for the workspace.
