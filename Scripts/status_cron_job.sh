@@ -21,13 +21,14 @@ dayOf=''
 # When specifying workspace data, `annual` should be an empty string or `-a`.
 # The latter will pass the proper `annual mode` flag.
 if [[ $workspace = home ]]; then
-   countdown_emoji=":dog:"
-   countdown_date="Apr 4"
-   annual=''
-elif [[ $workspace = a8c ]]; then
    countdown_emoji=":christmas_tree:"
    countdown_date="Apr 4"
-   annual=''
+   annual='-a'
+   dayOf='Merry Christmas!'
+elif [[ $workspace = a8c ]]; then
+   countdown_emoji=":christmas_tree:"
+   countdown_date="Dec 25"
+   annual='-a'
    dayOf='Merry Christmas!'
 fi
 
@@ -48,21 +49,20 @@ if [[ -n $countdown_emoji ]] && [[ -n $countdown_date ]]; then
                   echo -E "${updatedConfig}" >  ~/dev/slackli/config.json
 fi
 
-exit
-
 current_status=$( slackli ${workspace} getStatus ${username} )
 current_emoji=$(echo $current_status | /opt/homebrew/bin/jq -r '.emoji')
-curent_text=$(echo $current_status | /opt/homebrew/bin/jq -r '.text')
+current_text=$(echo $current_status | /opt/homebrew/bin/jq -r '.text')
 
-# We update the status if:
-# 1. It's empty OR
-# 2. It has the right current_emoji AND
-#    It has 1-3 digit number followed by the right current_emoji AND
-#    It doesn't have the same number as the countdown value.
-# I'd prefer to combine the last two conditions, but zsh was being a dick.
-if ([[ -z $current_emoji ]] && [[ -z $curent_text ]]) || \
-   ([[ $current_emoji = "${countdown_emoji}" ]] && \
-   [[ $curent_text =~ "^[0-9]{1,3} ${countdown_emoji}$" ]] && \
-   [[ $curent_text != "${countdown_value} ${countdown_emoji}" ]]); then
-	slackli ${workspace} status clear
+# Brace thyself.
+if \
+   # The status is clear
+   [[ -z $current_emoji && -z $current_text ]] || ( \
+   # or it has the current emoji and...
+   [[ $current_emoji = "${countdown_emoji}" ]] && ( \
+      # it's a number followed by the correct emoji, but does not match the current countdown value
+      [[ $current_text =~ "^[0-9]{1,3} ${countdown_emoji}$" && $current_text != "${countdown_value}" ]] || \
+      # or it matches the current dayOf string, but that isn't what the countdown value shoule be
+      [[ -n $dayOf && $current_text = $dayOf && $current_text != $countdown_value ]] ) ) ;then
+         # Clear the status
+         slackli ${workspace} status clear
 fi
