@@ -13,38 +13,42 @@ source ~/.zshrc
 
 workspace=$1
 username=$2
+countdown_emoji=''
+countdown_date=''
+annual=''
+dayOf=''
 
 # When specifying workspace data, `annual` should be an empty string or `-a`.
 # The latter will pass the proper `annual mode` flag.
 if [[ $workspace = home ]]; then
-   countdown_emoji=":house:"
-   countdown_date="Apr 1"
+   countdown_emoji=":dog:"
+   countdown_date="Apr 4"
    annual=''
-   dayOf="I'm on my way!"
 elif [[ $workspace = a8c ]]; then
    countdown_emoji=":christmas_tree:"
-   countdown_date="Dec 25"
+   countdown_date="Apr 4"
    annual=''
    dayOf='Merry Christmas!'
 fi
 
-countdown_value=$(countdown -s $annual -d "$countdown_date")
+#  Default status is only set if the values are defined for the workspace.
+if [[ -n $countdown_emoji ]] && [[ -n $countdown_date ]]; then
+   countdown_value="$(countdown -s $annual -d "$countdown_date") $countdown_emoji"
 
-# If `dayOf` is not an empty string, and the countdown value is 0, we set the
-# countdown_value to the `dayOf` string.
-if [[ -n $dayOf ]] && [[ $countdown_value = 0 ]]; then
-   countdown_value=$dayOf
+   if [[ -n $dayOf ]] && [[ $countdown_value = "0 $countdown_emoji" ]]; then
+      countdown_value=$dayOf
+   fi
+
+   updatedConfig="$( /opt/homebrew/bin/jq --tab \
+                     --arg workspace "$workspace" \
+                     --arg emoji "$countdown_emoji" \
+                     --arg text "$countdown_value" \
+                     '.workspaces[$workspace].defaultStatus.emoji = $emoji | 
+                     .workspaces[$workspace].defaultStatus.text = $text' ~/dev/slackli/config.json)" && \
+                  echo -E "${updatedConfig}" >  ~/dev/slackli/config.json
 fi
 
-# The default status is only modified if the text is 1-3 digits followed by the
-# right emoji. (first sed statement) OR
-# if the text matches the current `dayOf` string. (second sed statement)
-# This updates ALL default statuses that match the the current workspace's 
-# countdown_emoji`.
-#
-# In the future, I should clean this up so that two workspaces could safely use
-# the same emoji for different dates.
-sed -i '' -e "s/\([0-9].*\)\( ${countdown_emoji}\)/${countdown_value}\2/g;s/\(${dayOf}\)\( ${countdown_emoji}\)/${countdown_value}\2/" ~/dev/slackli/config.json
+exit
 
 current_status=$( slackli ${workspace} getStatus ${username} )
 current_emoji=$(echo $current_status | /opt/homebrew/bin/jq -r '.emoji')
