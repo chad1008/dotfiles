@@ -139,7 +139,7 @@
 	"diffEditor.renderSideBySide": false,
 	"github.copilot.enable": {
 		"*": true,
-		"yaml": false,
+		"yaml": true,
 		"plaintext": false,
 		"markdown": true
 	},
