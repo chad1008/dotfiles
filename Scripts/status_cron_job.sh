@@ -52,8 +52,8 @@ if [[ -n $countdown_emoji ]] && [[ -n $countdown_date ]]; then
                      --arg emoji "$countdown_emoji" \
                      --arg text "$countdown_value" \
                      '.workspaces[$workspace].defaultStatus.emoji = $emoji | 
-                     .workspaces[$workspace].defaultStatus.text = $text' ~/dev/slackli/config.json)" && \
-                  echo -E "${updatedConfig}" >  ~/dev/slackli/config.json
+                     .workspaces[$workspace].defaultStatus.text = $text' ~/dev/slackli/config.json)"
+   if -n updatedConfig; then echo -E "${updatedConfig}" > ~/dev/slackli/config.json
 fi
 
 current_status=$( slackli ${workspace} getStatus ${username} )
