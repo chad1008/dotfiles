@@ -134,6 +134,7 @@ morning () {
     slackli status clear --active
     open -a Slack
     unset message
+    say -v "Zarvox" "Good morning, Chad"
 }
 
 night() {
@@ -193,6 +194,7 @@ night() {
 
     osascript -e 'quit app "Slack"'
     unset message
+    say -v "Zarvox" "Good night, Chad"
 }
 
 weekend() {
