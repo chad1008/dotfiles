@@ -142,9 +142,9 @@
 		"exclude-utility-type",
 		"non-null-expression",
 		"as-const",
-		"as-const-on-object"
+		"as-const-on-object",
+		"partial-utility-type"
 	],
-	"diffEditor.renderSideBySide": false,
 	"github.copilot.enable": {
 		"*": true,
 		"yaml": true,
@@ -171,5 +171,6 @@
 	},
 	"cSpell.userWords": [
 		"Creds"
-	]
+	],
+	"diffEditor.renderSideBySide": false
 }
