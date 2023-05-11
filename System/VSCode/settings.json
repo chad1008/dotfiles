@@ -14,13 +14,21 @@
 	"prettier.configPath": "",
 	"editor.formatOnSave": true,
 	"editor.snippetSuggestions": "top",
-	"[javascript][json][typescript][typescriptreact][css]": {
+	"[javascript][json][typescript][typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
 	},
 	"[markdown]": {
 		"editor.formatOnSave": false
 	},
+	"stylelint.validate": [
+		"css",
+		"less",
+		"scss"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true
+	  },
 	"explorer.confirmDelete": false,
 	"editor.bracketPairColorization.enabled": true,
 	"explorer.confirmDragAndDrop": false,

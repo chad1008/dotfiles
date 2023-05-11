@@ -71,7 +71,7 @@ morning () {
 
     if [[ -z ${message} ]]; then
         # Prepare team greeting
-        greetings=("morning" "good morning" "good morning everyone" "hi" "hello")
+        greetings=("morning" "good morning" "good morning everyone" "hi" "hello" "howdy")
         emoji=("👋"\
             ":howdy:"\
             ":blob-wave:"\
@@ -99,7 +99,7 @@ morning () {
         # a 10% chance of a gif appearing.
         if [[ ${main_chance} -eq 1 ]]; then
             message=${gifs[ $RANDOM % ${#gifs[@]} + 1 ]}
-        # a 10% of an emoji-only greeting.
+        # a 10% chance of an emoji-only greeting.
         elif [[ ${main_chance} -eq 2 ]]; then
             message=${emoji[ $RANDOM % ${#emoji[@]} + 1 ]}
         # Otherwise (80%) a text greeting.
