@@ -195,6 +195,7 @@ night() {
     osascript -e 'quit app "Slack"'
     unset message
     say -v "Zarvox" "Good night, Chad"
+    (cd ~/dev/gutenberg && wp-env stop)
 }
 
 weekend() {
