@@ -129,9 +129,9 @@ morning () {
     fi
     startproxy
     if [[ "${morning_quiet}" = false ]]; then
-        slackli send "${team_channel}" "${message}" --active
+        slackli send "${team_channel}" "${message}"
     fi
-    slackli status clear
+    slackli status clear --active
     open -a Slack
     unset message
 }
@@ -187,8 +187,10 @@ night() {
     
     endproxy
     if [[ "${night_quiet}" = false ]]; then
-        slackli send "${team_channel}" "${message}" --away
+        slackli send "${team_channel}" "${message}"
     fi
+    slackli away
+
     osascript -e 'quit app "Slack"'
     unset message
 }
