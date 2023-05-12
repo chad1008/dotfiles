@@ -67,7 +67,7 @@ morning () {
             return 1;;
         esac
     done
-    shift $OPTIND-1
+    shift $((OPTIND-1))
 
     if [[ -z ${message} ]]; then
         # Prepare team greeting
@@ -149,7 +149,7 @@ night() {
             return 1;;
         esac
     done
-    shift $OPTIND-1
+    shift $((OPTIND-1))
 
     if [[ -z ${message} ]]; then
         # Prepare team goodbye
@@ -201,4 +201,5 @@ night() {
 weekend() {
     night -m "Out for the weekend. See you on Monday 👋 :weekend-2:"
     slackli status :weekend-2: "Back on monday" "monday 6 am"
+    say -v "Zarvox" "Have a good weekend"
 }
