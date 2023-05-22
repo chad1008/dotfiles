@@ -28,7 +28,7 @@
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.stylelint": true
-	  },
+	},
 	"explorer.confirmDelete": false,
 	"editor.bracketPairColorization.enabled": true,
 	"explorer.confirmDragAndDrop": false,
@@ -151,14 +151,19 @@
 		"plaintext": false,
 		"markdown": true
 	},
-	"todo-tree.general.tags": ["TODO","FIXME","BUG", "NTS"],
+	"todo-tree.general.tags": [
+		"TODO",
+		"FIXME",
+		"BUG",
+		"NTS"
+	],
 	"todo-tree.highlights.defaultHighlight": {
 		"gutterIcon": true,
 		"type": "text-and-comment"
 	},
 	"todo-tree.highlights.customHighlight": {
 		"TODO": {
-			"background":"#fdf989",
+			"background": "#fdf989",
 			"foreground": "#000",
 			"iconColour": "#006000"
 		},
@@ -172,5 +177,5 @@
 	"cSpell.userWords": [
 		"Creds"
 	],
-	"diffEditor.renderSideBySide": false
+	"diffEditor.renderSideBySide": false,
 }

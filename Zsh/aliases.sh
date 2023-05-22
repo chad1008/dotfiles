@@ -11,3 +11,7 @@ alias christmas='countdown -a -d "Dec 25" -n "christmas" -e "Its christmas eve!"
 
 # SSH
 alias sshwpcom="ssh -t wpcom 'cd public_html; bash -l'"
+
+# VSCode
+
+alias codein="code-insiders"
