@@ -43,6 +43,7 @@ meetend() {
     slackli home send lynne ":large_green_circle: Meeting is all done! :green_heart:"
     node ~/dev/hue/offAir.js
     osascript -e 'quit app "zoom.us"'
+    osascript -e 'quit app "pop"'
 
 }
 
@@ -82,6 +83,7 @@ morning () {
             ":sun-sun-sun:"\
             ":sun-happy-sun:"\
             ":sun-bounce-happy:"\
+            ":wave-om-nom:"\
             )
         gifs=("https://cldup.com/HfZ2UOvd5j.gif"\
             "https://cldup.com/ufvYPXt6QX.gif"\
