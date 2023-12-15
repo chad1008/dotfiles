@@ -178,4 +178,8 @@
 		"Creds"
 	],
 	"diffEditor.renderSideBySide": false,
+	"settingsSync.ignoredExtensions": [
+		"github.copilot-nightly",
+		"github.copilot"
+	],
 }
