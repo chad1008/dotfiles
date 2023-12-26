@@ -17,6 +17,7 @@ countdown_emoji=''
 countdown_date=''
 annual=false
 dayOf=''
+message=''
 
 # When specifying workspace data, set `annual` to true if the countdown is
 # annual, and set `dayOf` to the text you want to display on the day of the
@@ -31,6 +32,7 @@ elif [[ $workspace = a8c ]]; then
    countdown_date="Dec 25"
    annual=true
    dayOf='Happy Holidays!'
+   message='AFK until Jan 2'
 fi
 
 if $annual ;then
@@ -43,8 +45,13 @@ fi
 if [[ -n $countdown_emoji ]] && [[ -n $countdown_date ]]; then
    countdown_value="$(countdown -s $a_flag -d $countdown_date) $countdown_emoji"
 
-   if [[ -n $dayOf ]] && [[ $countdown_value = "0 $countdown_emoji" ]]; then
-      countdown_value=$dayOf
+   if [[ -n $dayOf ]] && [[ $countdown_value = "0 ${countdown_emoji}" ]]; then
+      countdown_value="${dayOf}"
+   fi
+
+   # If provided, add the message preceeded by a space
+   if [[ -n $message ]]; then
+      countdown_value="${countdown_value} ${message}"
    fi
 
    updatedConfig="$( /opt/homebrew/bin/jq --tab \
@@ -60,16 +67,24 @@ current_status=$( slackli ${workspace} getStatus ${username} )
 current_emoji=$(echo $current_status | /opt/homebrew/bin/jq -r '.emoji')
 current_text=$(echo $current_status | /opt/homebrew/bin/jq -r '.text')
 
+# Determine what pattern/string should be checked against, depending on whether or not a message was provided
+countdown_pattern="^-?[0-9]{1,3} ${countdown_emoji}$"
+dayOf_string=${dayOf}
+if [[ -n $message ]]; then
+   countdown_pattern="^-?[0-9]{1,3} ${countdown_emoji} ${message}$"
+   dayOf_string="${dayOf} ${message}"
+fi
+
 # Brace thyself.
 if \
    # The status is clear
    [[ -z $current_emoji && -z $current_text ]] || ( \
    # or it has the current emoji and...
    [[ $current_emoji = "${countdown_emoji}" ]] && ( \
-      # it's a number followed by the correct emoji, but does not match the current countdown value
-      [[ $current_text =~ "^-?[0-9]{1,3} ${countdown_emoji}$" && $current_text != "${countdown_value}" ]] || \
+      # it matches the countdown pattern, but does not match the current countdown value
+      [[ $current_text =~ $countdown_pattern && $current_text != "${countdown_value}" ]] || \
       # or it matches the current dayOf string, but that isn't what the countdown value shoule be
-      [[ -n $dayOf && $current_text = $dayOf && $current_text != $countdown_value ]] ) ) ;then
+      [[ -n $dayOf && $current_text = ${dayOf_string} && $current_text != $countdown_value ]] ) ) ;then
          # Clear the status
          slackli ${workspace} status clear
 fi
